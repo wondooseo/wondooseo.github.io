@@ -1,56 +1,670 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>wondooseo</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-color: #0d1117;
-      color: #c9d1d9;
-    }
-    .card {
-      background: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 12px;
-      padding: 2.5rem;
-      max-width: 480px;
-      text-align: center;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-    }
-    h1 {
-      font-size: 1.8rem;
-      color: #58a6ff;
-      margin-bottom: 1rem;
-    }
-    p {
-      font-size: 1.1rem;
-      color: #8b949e;
-      line-height: 1.6;
-    }
-    .badge {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.35rem 0.8rem;
-      border-radius: 20px;
-      background-color: #21262d;
-      border: 1px solid #30363d;
-      font-size: 0.9rem;
-      color: #7ee787;
-    }
-  </style>
+  <meta name="description" content="Academic Curriculum Vitae of Won-Doo Seo — Researcher in Medical AI, Bio-signal Processing, Feature Engineering, and Deep Learning.">
+  <meta name="theme-color" content="#fafaf8">
+  <title>Won-Doo Seo — Curriculum Vitae</title>
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem("wondoo-cv-theme");
+        const preferred = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        const theme = saved === "light" || saved === "dark" ? saved : preferred;
+        document.documentElement.dataset.theme = theme;
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", theme === "dark" ? "#0c0f16" : "#fafaf8");
+      } catch {
+        // Fallback relies on CSS prefers-color-scheme media query.
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="card">
-    <h1>wondooseo.github.io</h1>
-    <p>I hate html</p>
-    <div class="badge">🚀 GitHub Pages 배포 완료!</div>
-  </div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Won-Doo Seo CV Top">
+        <span class="brand-mark" aria-hidden="true">W</span>
+        <span>Won-Doo Seo</span>
+      </a>
+
+      <nav class="nav-links" aria-label="CV sections">
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#service">Service</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#honors">Honors</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="print-cv-btn" class="btn" type="button" title="Print or save CV as PDF">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>Print</span>
+        </button>
+
+        <button id="theme-toggle" class="btn" type="button" aria-pressed="false" aria-label="Switch color theme">
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+          <span id="theme-toggle-label">Dark</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="container">
+    <section id="top" class="hero" aria-label="Academic Profile">
+      <div class="hero-card">
+        <div class="hero-top">
+          <div>
+            <div class="hero-eyebrow">Curriculum Vitae</div>
+            <h1 class="hero-title">
+              Won-Doo Seo <span class="hero-kr">(서원두)</span>
+            </h1>
+            <p class="hero-role">Full-time Researcher · Medical AI Lab, AI Team, R&amp;D Center, Seers Technology</p>
+            <p class="hero-affiliation">M.Sc. in Computer Science, Yonsei University · Seongnam-si, Republic of Korea</p>
+          </div>
+        </div>
+
+        <p class="hero-bio">
+          Researcher specializing in biomedical signal processing, large-scale clinical data preprocessing, feature engineering, and machine learning / deep learning. Research work spans cuffless photoplethysmography (PPG) blood pressure estimation, explainable clinical decision support systems (CDSS), electrical impedance tomography (EIT) lung collapse estimation, and electroencephalography (EEG) functional connectivity analysis.
+        </p>
+
+        <div class="hero-links" aria-label="Academic profiles and contact">
+          <a class="pill-link" href="mailto:sentryradar@naver.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <span>Email</span>
+          </a>
+          <a class="pill-link" href="https://scholar.google.com/citations?user=WEnrQOYAAAAJ" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+            </svg>
+            <span>Google Scholar</span>
+          </a>
+          <a class="pill-link" href="https://orcid.org/0000-0001-8944-4262" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 11v5"></path>
+              <path d="M8 8h.01"></path>
+              <path d="M12 16v-5h2a2.5 2.5 0 0 1 0 5h-2z"></path>
+            </svg>
+            <span>ORCID</span>
+          </a>
+          <a class="pill-link" href="https://www.webofscience.com/wos/author/record/OZF-8499-2025" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
+            </svg>
+            <span>Web of Science</span>
+          </a>
+          <a class="pill-link" href="https://github.com/WondooSeo" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+              <path d="M9 18c-4.51 2-5-2-7-2"></path>
+            </svg>
+            <span>GitHub</span>
+          </a>
+          <a class="pill-link" href="https://www.linkedin.com/in/wondooseo/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect width="4" height="12" x="2" y="9"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+
+        <div class="interests-row">
+          <span class="interests-label">Research Interests</span>
+          <span class="tag">Artificial Intelligence (ML &amp; DL)</span>
+          <span class="tag">Bio-signal Processing</span>
+          <span class="tag">Feature Engineering</span>
+          <span class="tag">Data Preprocessing</span>
+          <span class="tag">Data Analysis</span>
+          <span class="tag">Clinical Decision Support</span>
+        </div>
+      </div>
+
+      <div class="stats-grid" aria-label="Academic Summary Metrics">
+        <div class="stat-card">
+          <div class="stat-value">5</div>
+          <div class="stat-label">Peer-Reviewed Papers<br>(3 Intl. Journals, 1 Conf., 1 Domestic)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">1</div>
+          <div class="stat-label">Granted Patent<br>(KR 10-2846998, First Inventor)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">17</div>
+          <div class="stat-label">Verified Peer Reviews<br>(Across 6 International Journals)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">3.96 / 4.3</div>
+          <div class="stat-label">M.Sc. Cumulative GPA<br>(Full 2-Year Scholarship)</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="cv-section">
+      <div class="section-header">
+        <h2 class="section-title">Education</h2>
+      </div>
+
+      <div class="stack-list">
+        <article class="card">
+          <div class="entry-head">
+            <h3 class="entry-title">M.Sc. in Computer Science (Wonju)</h3>
+            <span class="entry-period">2020.03 – 2022.08</span>
+          </div>
+          <div class="entry-org">Yonsei University Graduate School · Seoul &amp; Wonju, Republic of Korea</div>
+          <div class="entry-meta">
+            <span class="meta-pill">GPA 3.96 / 4.3 (33 credits)</span>
+            <span class="meta-pill">2-Year Full Scholarship (Early Admission)</span>
+          </div>
+          <ul class="entry-details">
+            <li><strong>CIP Lab</strong> (2021.01 – 2022.08): M.Sc. Candidate — Advisor: Hyeuknam Kwon, Ph.D. (Assoc. Prof., Div. of Software, Yonsei University).</li>
+            <li><strong>HAN Lab</strong> (2020.03 – 2020.12): M.Sc. Candidate — Advisor: Han Ul Yoon, Ph.D. (Assoc. Prof., Div. of Software, Yonsei University).</li>
+          </ul>
+          <div class="thesis-box">
+            <strong>Master's Thesis:</strong> <em>Applications of Dimension Reduction Techniques on Biological Data: EEG Data for Stroke and Bio-Impedance for Ventilation Monitoring</em><br>
+            <strong>Committee:</strong> Hyeuknam Kwon, Ph.D. (Chair), Han Ul Yoon, Ph.D., Young-Rae Cho, Ph.D.
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="entry-head">
+            <h3 class="entry-title">B.E. in Computer Engineering</h3>
+            <span class="entry-period">2015.02 – 2020.02</span>
+          </div>
+          <div class="entry-org">Yonsei University Mirae Campus · Wonju, Republic of Korea</div>
+          <div class="entry-meta">
+            <span class="meta-pill">Total GPA 3.80 / 4.3 (139 credits)</span>
+            <span class="meta-pill">Major GPA 3.71 / 4.3 (71 credits)</span>
+          </div>
+          <ul class="entry-details">
+            <li>Enrolled in the Division of Computer &amp; Telecommunication Engineering (reorganized as Division of Software).</li>
+            <li>Awarded 2 academic honors and 5 academic/merit scholarships.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="cv-section">
+      <div class="section-header">
+        <h2 class="section-title">Research Experience</h2>
+      </div>
+
+      <div class="stack-list">
+        <article class="card">
+          <div class="entry-head">
+            <h3 class="entry-title">Full-time Researcher</h3>
+            <span class="entry-period">2022.12 – Present</span>
+          </div>
+          <div class="entry-org">
+            <a href="https://seerstech.com/" target="_blank" rel="noopener noreferrer">AI Team, Medical AI Lab, R&amp;D Center, Seers Technology</a> · Seongnam-si, Republic of Korea
+          </div>
+          <ul class="entry-details">
+            <li>Specializing in biomedical signal processing, large-scale physiological data preprocessing, and feature engineering.</li>
+            <li><strong>PPG-BP Estimation Project</strong> (First solo research): Developed calibration-based cuffless continuous blood pressure estimation methods using pulse-derived signals, resulting in a first-author <em>BSPC</em> publication and a granted patent.</li>
+            <li><strong>CDSS (Clinical Decision Support System) Project</strong>: Contributed dataset preprocessing (eICU, MIMIC-IV), feature engineering, and explainable ML evaluation pipelines for ICU cardiac arrest prediction.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="entry-head">
+            <h3 class="entry-title">Research Intern</h3>
+            <span class="entry-period">2021.09 – 2021.12</span>
+          </div>
+          <div class="entry-org">
+            <a href="http://bilabhealthcare.com/" target="_blank" rel="noopener noreferrer">Original Technology Department, BiLab</a> · Seongnam-si, Republic of Korea
+          </div>
+          <ul class="entry-details">
+            <li>Conducted research and development in biomedical engineering and signal acquisition technologies within the Original Technology Department.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+    <section id="publications" class="cv-section">
+      <div class="section-header">
+        <h2 class="section-title">Publications &amp; Patent</h2>
+        <span class="section-subtitle">* First author / inventor &nbsp;·&nbsp; † Corresponding author</span>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="Filter publications by category">
+        <button class="filter-tab" type="button" data-filter="all" aria-pressed="true">All (6)</button>
+        <button class="filter-tab" type="button" data-filter="journal" aria-pressed="false">International Journal (3)</button>
+        <button class="filter-tab" type="button" data-filter="conference" aria-pressed="false">Conference (1)</button>
+        <button class="filter-tab" type="button" data-filter="domestic" aria-pressed="false">Domestic Journal (1)</button>
+        <button class="filter-tab" type="button" data-filter="patent" aria-pressed="false">Patent (1)</button>
+      </div>
+      <span id="pub-filter-status" class="sr-only" aria-live="polite">Showing 6 items</span>
+
+      <div class="stack-list">
+        <article class="card pub-card" data-category="journal">
+          <div class="pub-top">
+            <div class="pub-badges">
+              <span class="type-badge type-badge--journal">International Journal</span>
+              <span class="role-badge">First Author</span>
+            </div>
+            <span class="pub-year">2026</span>
+          </div>
+          <h3 class="pub-title">Calibration-Based Continuous Blood Pressure Estimation Using Pulse-Derived Signals and Feature Normalization</h3>
+          <p class="pub-authors"><span class="author-self">Won-Doo Seo*</span>, Insung Choi, Kyung Chul Kim, Hee Seok Song, and Yun Kwan Kim†</p>
+          <p class="pub-venue"><em>Biomedical Signal Processing and Control</em>, Vol. 120, 109852, 2026</p>
+          <div class="pub-links">
+            <a class="pub-link-btn" href="https://doi.org/10.1016/j.bspc.2026.109852" target="_blank" rel="noopener noreferrer">DOI: 10.1016/j.bspc.2026.109852</a>
+          </div>
+          <details class="pub-contrib">
+            <summary>Key Contributions</summary>
+            <ul>
+              <li>Led and executed the entire research workflow, including experimental design and evaluation.</li>
+              <li>Proposed a calibration data fusion method combining affine transformation with a residual block incorporating squeeze-and-excitation.</li>
+              <li>Improved continuous blood pressure estimation performance with negligible computational overhead compared to prior works.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card pub-card" data-category="journal">
+          <div class="pub-top">
+            <div class="pub-badges">
+              <span class="type-badge type-badge--journal">International Journal</span>
+              <span class="role-badge">Second Author</span>
+            </div>
+            <span class="pub-year">2026</span>
+          </div>
+          <h3 class="pub-title">Deep Learning-Based Estimation of Lung Collapse in Electrical Impedance Tomography: A Simulated and Phantom Study</h3>
+          <p class="pub-authors">Hana Jang*, <span class="author-self">Won-Doo Seo</span>, You Jeong Jeong, Tong In Oh, and Hyeuknam Kwon†</p>
+          <p class="pub-venue"><em>Physiological Measurement</em>, Vol. 47, No. 3, 035005, 2026</p>
+          <div class="pub-links">
+            <a class="pub-link-btn" href="https://doi.org/10.1088/1361-6579/ae4849" target="_blank" rel="noopener noreferrer">DOI: 10.1088/1361-6579/ae4849</a>
+          </div>
+          <details class="pub-contrib">
+            <summary>Key Contributions</summary>
+            <ul>
+              <li>Designed and conducted the EIT simulation experimental pipeline and overall procedural setup.</li>
+              <li>Proposed a deep learning-based lung collapse score as an alternative to the conventional Global Inhomogeneity (GI) index.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card pub-card" data-category="patent">
+          <div class="pub-top">
+            <div class="pub-badges">
+              <span class="type-badge type-badge--patent">Patent</span>
+              <span class="role-badge">First Inventor</span>
+            </div>
+            <span class="pub-year">2025</span>
+          </div>
+          <h3 class="pub-title">Deep Learning-Based Cuffless Blood Pressure Estimation System and Method Using Original PPG Signal and Differential Signals</h3>
+          <p class="pub-authors"><span class="author-self">Won-Doo Seo*</span>, Yun Kwan Kim, Gyung Chul Kim, and Young Shin Lee</p>
+          <p class="pub-venue">Korean Patent KR 10-2846998 · Granted Aug. 12, 2025</p>
+          <div class="pub-links">
+            <a class="pub-link-btn" href="https://doi.org/10.8080/1020240161444" target="_blank" rel="noopener noreferrer">DOI: 10.8080/1020240161444</a>
+          </div>
+        </article>
+
+        <article class="card pub-card" data-category="journal">
+          <div class="pub-top">
+            <div class="pub-badges">
+              <span class="type-badge type-badge--journal">International Journal</span>
+              <span class="role-badge">Second Author</span>
+            </div>
+            <span class="pub-year">2024</span>
+          </div>
+          <h3 class="pub-title">Early Prediction of Cardiac Arrest in the Intensive Care Unit Using Explainable Machine Learning: Retrospective Study</h3>
+          <p class="pub-authors">Yun Kwan Kim*, <span class="author-self">Won-Doo Seo</span>, Sun Jung Lee, Ja Hyung Koo, Kyung Chul Kim, Hee Seok Song, and Minji Lee†</p>
+          <p class="pub-venue"><em>Journal of Medical Internet Research</em>, Vol. 26, e62890, 2024</p>
+          <div class="pub-links">
+            <a class="pub-link-btn" href="https://doi.org/10.2196/62890" target="_blank" rel="noopener noreferrer">DOI: 10.2196/62890</a>
+          </div>
+          <details class="pub-contrib">
+            <summary>Key Contributions</summary>
+            <ul>
+              <li>Preprocessed large-scale ICU clinical datasets (eICU and MIMIC-IV).</li>
+              <li>Implemented pseudo-running and model evaluation pipelines in Python.</li>
+              <li>Proposed a Gini index-based feature and systematically organized evaluation metrics.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card pub-card" data-category="conference">
+          <div class="pub-top">
+            <div class="pub-badges">
+              <span class="type-badge type-badge--conference">International Conference</span>
+              <span class="role-badge">First &amp; Corresponding Author</span>
+            </div>
+            <span class="pub-year">2022</span>
+          </div>
+          <h3 class="pub-title">The Degree of Lung Collapse Estimation Method using Convolutional Autoencoder and Neural Regression in Electrical Impedance Tomography</h3>
+          <p class="pub-authors"><span class="author-self">Won-Doo Seo*†</span> and Hyeuknam Kwon†</p>
+          <p class="pub-venue"><em>International Conference on Bioelectromagnetism, Electrical Bioimpedance, and Electrical Impedance Tomography (ICBEM-ICEBI-EIT 2022)</em>, Seoul, Republic of Korea, Jun. 29 – Jul. 1, 2022</p>
+          <div class="pub-links">
+            <a class="pub-link-btn" href="http://dx.doi.org/10.13140/RG.2.2.33645.05604" target="_blank" rel="noopener noreferrer">DOI: 10.13140/RG.2.2.33645.05604</a>
+            <a class="pub-link-btn" href="https://github.com/WondooSeo/Making_EIT_Data_with_EIDORS" target="_blank" rel="noopener noreferrer">Dataset Code (GitHub)</a>
+            <a class="pub-link-btn" href="https://github.com/WondooSeo/Convolutional_AutoEncoder_Neural_Regression" target="_blank" rel="noopener noreferrer">Model Code (GitHub)</a>
+          </div>
+          <details class="pub-contrib">
+            <summary>Key Contributions</summary>
+            <ul>
+              <li>Developed MATLAB/EIDORS scripts to generate synthetic EIT images derived from real axial lung CT scans.</li>
+              <li>Proposed the Convolutional Autoencoder and Neural Regression (CAENR) architecture in Python/Keras to estimate lung collapse degree from a single EIT image.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card pub-card" data-category="domestic">
+          <div class="pub-top">
+            <div class="pub-badges">
+              <span class="type-badge type-badge--domestic">Domestic Journal</span>
+              <span class="role-badge">First Author</span>
+            </div>
+            <span class="pub-year">2020</span>
+          </div>
+          <h3 class="pub-title">Simultaneous Inter-Channel EEG Activation and Brain Functional Connectivity</h3>
+          <p class="pub-authors"><span class="author-self">Won-Doo Seo*</span> and Han Ul Yoon†</p>
+          <p class="pub-venue"><em>Journal of the Korean Institute of Intelligent Systems</em>, Vol. 30, No. 6, pp. 465–471, 2020</p>
+          <div class="pub-links">
+            <a class="pub-link-btn" href="https://doi.org/10.5391/jkiis.2020.30.6.465" target="_blank" rel="noopener noreferrer">DOI: 10.5391/jkiis.2020.30.6.465</a>
+          </div>
+          <details class="pub-contrib">
+            <summary>Key Contributions</summary>
+            <ul>
+              <li>Identified relationships between the somatosensory cortex and prefrontal cortex via event-related potential analysis and visualization of simultaneous inter-channel EEG activation.</li>
+              <li>Evaluated quantitative assessment of gait recovery stages in stroke patients undergoing exoskeleton-assisted rehabilitation.</li>
+            </ul>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <section id="service" class="cv-section">
+      <div class="section-header">
+        <h2 class="section-title">Academic Service</h2>
+        <span class="section-subtitle">Peer review records verified on ORCID &amp; Web of Science™</span>
+      </div>
+
+      <div class="two-col-grid">
+        <div class="card review-card">
+          <div class="review-journal">
+            <a href="https://www.sciencedirect.com/journal/biomedical-signal-processing-and-control" target="_blank" rel="noopener noreferrer">Biomedical Signal Processing and Control</a>
+          </div>
+          <span class="count-pill">11 reviews</span>
+        </div>
+
+        <div class="card review-card">
+          <div class="review-journal">
+            <a href="https://www.embs.org/jbhi/" target="_blank" rel="noopener noreferrer">IEEE Journal of Biomedical and Health Informatics</a>
+          </div>
+          <span class="count-pill">2 reviews</span>
+        </div>
+
+        <div class="card review-card">
+          <div class="review-journal">
+            <a href="https://www.sciencedirect.com/journal/expert-systems-with-applications" target="_blank" rel="noopener noreferrer">Expert Systems with Applications</a>
+          </div>
+          <span class="count-pill">1 review</span>
+        </div>
+
+        <div class="card review-card">
+          <div class="review-journal">
+            <a href="https://mhealth.jmir.org/" target="_blank" rel="noopener noreferrer">JMIR mHealth and uHealth</a>
+          </div>
+          <span class="count-pill">1 review</span>
+        </div>
+
+        <div class="card review-card">
+          <div class="review-journal">
+            <a href="https://humanfactors.jmir.org/" target="_blank" rel="noopener noreferrer">JMIR Human Factors</a>
+          </div>
+          <span class="count-pill">1 review</span>
+        </div>
+
+        <div class="card review-card">
+          <div class="review-journal">
+            <a href="https://pubs.aip.org/aip/rsi" target="_blank" rel="noopener noreferrer">Review of Scientific Instruments</a>
+          </div>
+          <span class="count-pill">1 review</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaching" class="cv-section">
+      <div class="section-header">
+        <h2 class="section-title">Teaching Experience</h2>
+        <span class="section-subtitle">Yonsei University · Selected Courses</span>
+      </div>
+
+      <div class="two-col-grid">
+        <article class="card compact-item">
+          <div class="compact-top">
+            <span class="compact-code">YHL1012-02</span>
+            <span class="entry-period">2021 Spring</span>
+          </div>
+          <h3 class="compact-title">Discrete Mathematics</h3>
+          <p class="compact-sub">Teaching Assistant · Yonsei University</p>
+        </article>
+
+        <article class="card compact-item">
+          <div class="compact-top">
+            <span class="compact-code">YHL1014-01</span>
+            <span class="entry-period">2020 Fall</span>
+          </div>
+          <h3 class="compact-title">Probability and Statistics</h3>
+          <p class="compact-sub">Teaching Assistant · Yonsei University</p>
+        </article>
+
+        <article class="card compact-item">
+          <div class="compact-top">
+            <span class="compact-code">CSE3001-01</span>
+            <span class="entry-period">2020 Fall</span>
+          </div>
+          <h3 class="compact-title">Numerical Analysis</h3>
+          <p class="compact-sub">Teaching Assistant · Yonsei University</p>
+        </article>
+
+        <article class="card compact-item">
+          <div class="compact-top">
+            <span class="compact-code">YHL1010-02</span>
+            <span class="entry-period">2020 Spring</span>
+          </div>
+          <h3 class="compact-title">Engineering Mathematics (I)</h3>
+          <p class="compact-sub">Teaching Assistant · Yonsei University</p>
+        </article>
+
+        <article class="card compact-item">
+          <div class="compact-top">
+            <span class="compact-code">ITD2004-01</span>
+            <span class="entry-period">2020 Spring</span>
+          </div>
+          <h3 class="compact-title">Object Oriented Programming</h3>
+          <p class="compact-sub">Teaching Assistant · Yonsei University</p>
+        </article>
+
+        <article class="card compact-item">
+          <div class="compact-top">
+            <span class="compact-code">MTH3021-01</span>
+            <span class="entry-period">2019 Fall</span>
+          </div>
+          <h3 class="compact-title">Programming Language</h3>
+          <p class="compact-sub">Undergraduate Tutor · Yonsei University</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="honors" class="cv-section">
+      <div class="section-header">
+        <h2 class="section-title">Honors, Scholarships &amp; Presentations</h2>
+      </div>
+
+      <h3 class="subsection-label">Academic Honors</h3>
+      <div class="card list-card">
+        <div class="row-item">
+          <div class="row-main">
+            <div class="row-title">Distinguished Paper Award</div>
+            <div class="row-sub">
+              <a href="http://fuzzy.or.kr/main/" target="_blank" rel="noopener noreferrer">KIIS (Korean Institute of Intelligent Systems) Spring Conference 2020</a>
+            </div>
+          </div>
+          <span class="row-period">2020 Spring</span>
+        </div>
+        <div class="row-item">
+          <div class="row-main">
+            <div class="row-title">Academic Honor</div>
+            <div class="row-sub">Yonsei University</div>
+          </div>
+          <span class="row-period">2016 Fall</span>
+        </div>
+        <div class="row-item">
+          <div class="row-main">
+            <div class="row-title">Academic Honor</div>
+            <div class="row-sub">Yonsei University</div>
+          </div>
+          <span class="row-period">2015 Fall</span>
+        </div>
+      </div>
+
+      <h3 class="subsection-label">Scholarships</h3>
+      <div class="card list-card">
+        <div class="row-item">
+          <div class="row-main">
+            <div class="row-title">2-Year Full Scholarship (Early Admission to M.Sc. in Dept. of Computer Science)</div>
+            <div class="row-sub">Yonsei University Graduate School</div>
+          </div>
+          <span class="row-period">2020 Spring</span>
+        </div>
+        <div class="row-item">
+          <div class="row-main">
+            <div class="row-title">TOPCIT Scholarship (High Scoring)</div>
+            <div class="row-sub">Yonsei University</div>
+          </div>
+          <span class="row-period">2019 Fall</span>
+        </div>
+        <div class="row-item">
+          <div class="row-main">
+            <div class="row-title">Yonsei Vision Scholarship (Academic Excellence)</div>
+            <div class="row-sub">Yonsei University</div>
+          </div>
+          <span class="row-period">2016 Fall</span>
+        </div>
+        <div class="row-item">
+          <div class="row-main">
+            <div class="row-title">Dungji Scholarship</div>
+            <div class="row-sub">First public-funded scholarship of Yonsei University Wonju Campus</div>
+          </div>
+          <span class="row-period">2016 Spring</span>
+        </div>
+        <div class="row-item">
+          <div class="row-main">
+            <div class="row-title">Academic Excellence Scholarship</div>
+            <div class="row-sub">Yonsei University</div>
+          </div>
+          <span class="row-period">2016 Spring</span>
+        </div>
+        <div class="row-item">
+          <div class="row-main">
+            <div class="row-title">Academic Excellence Scholarship</div>
+            <div class="row-sub">Yonsei University</div>
+          </div>
+          <span class="row-period">2015 Fall</span>
+        </div>
+      </div>
+
+      <h3 class="subsection-label">Invited Presentations &amp; Academic Writing</h3>
+      <div class="card list-card">
+        <div class="row-item">
+          <div class="row-main">
+            <div class="row-title">
+              <a href="https://drive.google.com/file/d/1DeEKWzDD0HL7E1qZDqydAUASMBXWzO1H/view?usp=sharing" target="_blank" rel="noopener noreferrer">"Somehow I Became an AI Researcher"</a>
+            </div>
+            <div class="row-sub">Invited Talk · Residential Colloquia, Yonsei University Mirae Campus</div>
+          </div>
+          <span class="row-period">2024.04</span>
+        </div>
+        <div class="row-item">
+          <div class="row-main">
+            <div class="row-title">
+              <a href="http://chunchu.yonsei.ac.kr/news/articleView.html?idxno=21353" target="_blank" rel="noopener noreferrer">"Artificial Intelligence, You Don't Have to Be Afraid"</a>
+            </div>
+            <div class="row-sub">Column · <em>Yonsei Chunchu</em> (Weekly Newspaper of Yonsei University)</div>
+          </div>
+          <span class="row-period">2016.03</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack" class="cv-section">
+      <div class="section-header">
+        <h2 class="section-title">Technical Stack</h2>
+      </div>
+
+      <div class="two-col-grid">
+        <div class="card stack-card">
+          <h3>Languages &amp; Scientific Computing</h3>
+          <div class="tag-list">
+            <span class="tag">Python 3</span>
+            <span class="tag tag--neutral">NumPy</span>
+            <span class="tag tag--neutral">Pandas</span>
+            <span class="tag tag--neutral">SciPy</span>
+            <span class="tag tag--neutral">Scikit-Learn</span>
+            <span class="tag tag--neutral">Matplotlib</span>
+            <span class="tag">Keras</span>
+            <span class="tag">MATLAB</span>
+          </div>
+        </div>
+
+        <div class="card stack-card">
+          <h3>Development Environments</h3>
+          <div class="tag-list">
+            <span class="tag">Visual Studio Code</span>
+            <span class="tag">PyCharm</span>
+            <span class="tag tag--neutral">Anaconda</span>
+            <span class="tag tag--neutral">Sublime Text</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-address">
+        <strong>Academic &amp; Research Correspondence</strong><br>
+        Won-Doo Seo · Researcher, AI Team, AI Lab, R&amp;D Center, Seers Technology<br>
+        5F, Building B, 246, Hwangsaeul-Ro, Bundang-Gu, Seongnam-Si, Gyeonggi-Do, 13595, Republic of Korea
+      </div>
+      <div class="footer-meta">
+        <div><a href="mailto:sentryradar@naver.com">sentryradar@naver.com</a></div>
+        <div>&copy; 2020–2026 Won-Doo Seo. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
