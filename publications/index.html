@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="International journals, conference papers, domestic journals, and patents by Won-Doo Seo.">
+  <meta name="theme-color" content="#f6f7f9">
+  <title>Publications — Won-Doo Seo</title>
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/favicon.png">
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem("wondoo-site-theme");
+        const preferred = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        const theme = saved === "light" || saved === "dark" ? saved : preferred;
+        document.documentElement.dataset.theme = theme;
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", theme === "dark" ? "#0d1016" : "#f6f7f9");
+      } catch {
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="brand" href="../">
+        <img class="brand-icon" src="../assets/favicon.png" alt="Won-Doo Seo logo" width="30" height="30">
+        <span>Won-Doo Seo</span>
+      </a>
+
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="../">HOME</a>
+          <a href="../cv/">CV</a>
+          <a href="../about-me/">ABOUT ME</a>
+          <a href="../publications/" aria-current="page">PUBLICATIONS</a>
+          <a href="../hobbys/">HOBBYS</a>
+          <a href="../contact/">CONTACT</a>
+        </nav>
+
+        <button id="theme-toggle" class="btn" type="button" aria-pressed="false" aria-label="Switch color theme">
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+          <span id="theme-toggle-label">Dark</span>
+        </button>
+
+        <button id="mobile-menu-btn" class="btn mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Toggle navigation menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <span>Menu</span>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-drawer" class="mobile-drawer" aria-label="Mobile navigation">
+      <a href="../">HOME</a>
+      <a href="../cv/">CV</a>
+      <a href="../about-me/">ABOUT ME</a>
+      <a href="../publications/" aria-current="page">PUBLICATIONS</a>
+      <a href="../hobbys/">HOBBYS</a>
+      <a href="../contact/">CONTACT</a>
+    </nav>
+  </header>
+
+  <div class="container page-shell">
+    <div class="layout-grid">
+      <aside class="sidebar" aria-label="Profile and site links">
+        <div class="sidebar-card">
+          <div class="sidebar-profile">
+            <img class="sidebar-avatar" src="../assets/images/profile.jpg" alt="Won-Doo Seo" width="52" height="52">
+            <div>
+              <div class="sidebar-name">Won-Doo Seo</div>
+              <div class="sidebar-handle">서원두 · AI Researcher</div>
+            </div>
+          </div>
+          <p class="sidebar-bio">
+            Full-time researcher @ Medical AI Lab, R&amp;D Center, Seers Technology. M.Sc. in Computer Science, Yonsei University.
+          </p>
+          <div class="sidebar-motto">&#x1F3C1; I MUST NOT FEAR &#x1F3C1;</div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-section-title">Connect &amp; Profiles</div>
+          <div class="social-list">
+            <a class="social-link" href="https://scholar.google.com/citations?user=WEnrQOYAAAAJ" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              <span>Google Scholar</span>
+            </a>
+            <a class="social-link" href="https://orcid.org/0000-0001-8944-4262" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 11v5"></path><path d="M8 8h.01"></path><path d="M12 16v-5h2a2.5 2.5 0 0 1 0 5h-2z"></path></svg>
+              <span>ORCID</span>
+            </a>
+            <a class="social-link" href="https://www.webofscience.com/wos/author/record/OZF-8499-2025" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg>
+              <span>Web of Science</span>
+            </a>
+            <a class="social-link" href="https://github.com/WondooSeo" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+              <span>GitHub</span>
+            </a>
+            <a class="social-link" href="https://www.linkedin.com/in/wondooseo/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a class="social-link" href="https://www.instagram.com/miracleboy_wondoo/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              <span>Instagram</span>
+            </a>
+            <a class="social-link" href="mailto:sentryradar@naver.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-section-title">Menu</div>
+          <nav class="category-list" aria-label="Sidebar page directory">
+            <a class="category-link" href="../"><span>HOME</span><span class="category-count">Summary</span></a>
+            <a class="category-link" href="../cv/"><span>CV</span><span class="category-count">Draft</span></a>
+            <a class="category-link" href="../about-me/"><span>ABOUT ME</span><span class="category-count">4</span></a>
+            <a class="category-link" href="../publications/" aria-current="page"><span>PUBLICATIONS</span><span class="category-count">6</span></a>
+            <a class="category-link" href="../hobbys/"><span>HOBBYS</span><span class="category-count">3</span></a>
+            <a class="category-link" href="../contact/"><span>CONTACT</span><span class="category-count">Info</span></a>
+          </nav>
+        </div>
+      </aside>
+
+      <main id="main-content" class="main-col">
+        <section class="card">
+          <div class="eyebrow">Research Output</div>
+          <h1 class="page-title">Publications &amp; Patent</h1>
+          <p class="page-subtitle">* First author / inventor &nbsp;·&nbsp; † Corresponding author</p>
+          <div class="subnav-pills">
+            <button class="filter-tab" type="button" data-filter="all" aria-pressed="true">All (6)</button>
+            <button class="filter-tab" type="button" data-filter="journal" aria-pressed="false">International Journal (3)</button>
+            <button class="filter-tab" type="button" data-filter="conference" aria-pressed="false">International Conference (1)</button>
+            <button class="filter-tab" type="button" data-filter="domestic" aria-pressed="false">Domestic Journal (1)</button>
+            <button class="filter-tab" type="button" data-filter="patent" aria-pressed="false">Patent (1)</button>
+          </div>
+          <span id="pub-filter-status" class="sr-only" aria-live="polite">Showing 6 items</span>
+        </section>
+
+        <article class="card pub-card" data-category="journal">
+          <div class="pub-top">
+            <div class="pub-badges">
+              <span class="type-badge type-badge--journal">International Journal</span>
+              <span class="role-badge">First Author</span>
+            </div>
+            <span class="pub-year">2026</span>
+          </div>
+          <h2 class="pub-title">Calibration-Based Continuous Blood Pressure Estimation Using Pulse-Derived Signals and Feature Normalization</h2>
+          <p class="pub-authors"><span class="author-self">Won-Doo Seo*</span>, Insung Choi, Kyung Chul Kim, Hee Seok Song and Yun Kwan Kim†</p>
+          <p class="pub-venue"><em>Biomedical Signal Processing and Control</em>, Vol. 120, 109852, 2026.</p>
+          <div class="pub-links">
+            <a class="pub-link-btn" href="https://doi.org/10.1016/j.bspc.2026.109852" target="_blank" rel="noopener noreferrer">DOI: 10.1016/j.bspc.2026.109852</a>
+          </div>
+          <details class="pub-contrib">
+            <summary>Contributions (First author)</summary>
+            <ul>
+              <li>Encapsulate and proceed all research processes including designs and experiments</li>
+              <li>Propose a new calibration data fusion method using affine transformation and residual block with squeeze-and-excitation</li>
+              <li>Improve estimation performance with negligible computational cost increment compare to previous works</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card pub-card" data-category="journal">
+          <div class="pub-top">
+            <div class="pub-badges">
+              <span class="type-badge type-badge--journal">International Journal</span>
+              <span class="role-badge">Second Author</span>
+            </div>
+            <span class="pub-year">2026</span>
+          </div>
+          <h2 class="pub-title">Deep Learning-Based Estimation of Lung Collapse in Electrical Impedance Tomography: A Simulated and Phantom Study</h2>
+          <p class="pub-authors">Hana Jang*, <span class="author-self">Won-Doo Seo</span>, You Jeong Jeong, Tong In Oh and Hyeuknam Kwon†</p>
+          <p class="pub-venue"><em>Physiological Measurement</em>, Vol. 47, No. 3, 035005, 2026.</p>
+          <div class="pub-links">
+            <a class="pub-link-btn" href="https://doi.org/10.1088/1361-6579/ae4849" target="_blank" rel="noopener noreferrer">DOI: 10.1088/1361-6579/ae4849</a>
+          </div>
+          <details class="pub-contrib">
+            <summary>Contributions (Second author)</summary>
+            <ul>
+              <li>Encapsulate and proceed EIT simulation experiment and its process including designs and experiments</li>
+              <li>Suggest deep learning-based lung collapse score instead of using GI index</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card pub-card" data-category="patent">
+          <div class="pub-top">
+            <div class="pub-badges">
+              <span class="type-badge type-badge--patent">Patent</span>
+              <span class="role-badge">First Inventor</span>
+            </div>
+            <span class="pub-year">2025</span>
+          </div>
+          <h2 class="pub-title">Deep Learning-Based Cuffless Blood Pressure Estimation System and Method Using Original PPG Signal and Differential Signals</h2>
+          <p class="pub-authors"><span class="author-self">Won-Doo Seo*</span>, Yun Kwan Kim, Gyung Chul Kim and Young Shin Lee</p>
+          <p class="pub-venue">KR 10-2846998, Aug. 12, 2025.</p>
+          <div class="pub-links">
+            <a class="pub-link-btn" href="https://doi.org/10.8080/1020240161444" target="_blank" rel="noopener noreferrer">DOI: 10.8080/1020240161444</a>
+          </div>
+        </article>
+
+        <article class="card pub-card" data-category="journal">
+          <div class="pub-top">
+            <div class="pub-badges">
+              <span class="type-badge type-badge--journal">International Journal</span>
+              <span class="role-badge">Second Author</span>
+            </div>
+            <span class="pub-year">2024</span>
+          </div>
+          <h2 class="pub-title">Early Prediction of Cardiac Arrest in the Intensive Care Unit Using Explainable Machine Learning: Retrospective Study</h2>
+          <p class="pub-authors">Yun Kwan Kim*, <span class="author-self">Won-Doo Seo</span>, Sun Jung Lee, Ja Hyung Koo, Kyung Chul Kim, Hee Seok Song and Minji Lee†</p>
+          <p class="pub-venue"><em>Journal of Medical Internet Research</em>, Vol. 26, e62890, 2024.</p>
+          <div class="pub-links">
+            <a class="pub-link-btn" href="https://doi.org/10.2196/62890" target="_blank" rel="noopener noreferrer">DOI: 10.2196/62890</a>
+          </div>
+          <details class="pub-contrib">
+            <summary>Contributions (Second author)</summary>
+            <ul>
+              <li>Preprocess datasets (i.e., eICU and MIMIC-IV)</li>
+              <li>Make a code of pseudo-running &amp; model evaluate program using Python</li>
+              <li>Suggest Gini index-based new feature</li>
+              <li>Organize metric results</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card pub-card" data-category="conference">
+          <div class="pub-top">
+            <div class="pub-badges">
+              <span class="type-badge type-badge--conference">International Conference</span>
+              <span class="role-badge">First &amp; Corresponding Author</span>
+            </div>
+            <span class="pub-year">2022</span>
+          </div>
+          <h2 class="pub-title">The Degree of Lung Collapse Estimation Method using Convolutional Autoencoder and Neural Regression in Electrical Impedance Tomography</h2>
+          <p class="pub-authors"><span class="author-self">Won-Doo Seo*†</span> and Hyeuknam Kwon†</p>
+          <p class="pub-venue"><em>International Conference on Bioelectromagnetism, Electrical Bioimpedance, and Electrical Impedance Tomography (ICBEM-ICEBI-EIT) 2022</em>, Seoul, Republic of Korea, June 29-July 1, 2022.</p>
+          <div class="pub-links">
+            <a class="pub-link-btn" href="http://dx.doi.org/10.13140/RG.2.2.33645.05604" target="_blank" rel="noopener noreferrer">DOI: 10.13140/RG.2.2.33645.05604</a>
+            <a class="pub-link-btn" href="https://github.com/WondooSeo/Making_EIT_Data_with_EIDORS" target="_blank" rel="noopener noreferrer">Dataset Generate Code</a>
+            <a class="pub-link-btn" href="https://github.com/WondooSeo/Convolutional_AutoEncoder_Neural_Regression" target="_blank" rel="noopener noreferrer">Model Code</a>
+          </div>
+          <details class="pub-contrib">
+            <summary>Contributions (First &amp; Corresponding author)</summary>
+            <ul>
+              <li>Develop real axial lung CT image-based counterfeit EIT image generation codes using Matlab</li>
+              <li>Propose a model that estimates how much lung collapsed with a single EIT image by concatenating Convolutional Auto Encoder and Neural Regression (CAENR) using Python and Keras</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card pub-card" data-category="domestic">
+          <div class="pub-top">
+            <div class="pub-badges">
+              <span class="type-badge type-badge--domestic">Domestic Journal</span>
+              <span class="role-badge">First Author</span>
+            </div>
+            <span class="pub-year">2020</span>
+          </div>
+          <h2 class="pub-title">Simultaneous Inter-Channel EEG Activation and Brain Functional Connectivity</h2>
+          <p class="pub-authors"><span class="author-self">Won-Doo Seo*</span> and Han Ul Yoon†</p>
+          <p class="pub-venue"><em>Journal of the Korean Institute of Intelligent Systems</em>, Vol. 30, No. 6, pp. 465-471, 2020.</p>
+          <div class="pub-links">
+            <a class="pub-link-btn" href="https://doi.org/10.5391/jkiis.2020.30.6.465" target="_blank" rel="noopener noreferrer">DOI: 10.5391/jkiis.2020.30.6.465</a>
+          </div>
+          <details class="pub-contrib">
+            <summary>Contributions (First author)</summary>
+            <ul>
+              <li>Find a relationship between somato-sensory cortex and prefrontal cortex by analyzing event-related potential and visualizing simultaneous inter-channel EEG activation</li>
+              <li>Check the possibility of presenting the recovery stage of stroke patients' gait function quantitatively who are provided exoskeleton robot rehabilitation</li>
+            </ul>
+          </details>
+        </article>
+      </main>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-motto">&#x1F3C1; I MUST NOT FEAR &#x1F3C1;</div>
+      <div>COPYRIGHT &copy; 2020-2026 Won-Doo Seo, ALL RIGHTS RESERVED.</div>
+    </div>
+  </footer>
+
+  <script src="../assets/script.js"></script>
+</body>
+</html>

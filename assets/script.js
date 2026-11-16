@@ -1,10 +1,9 @@
 (() => {
-  const STORAGE_KEY = "wondoo-cv-theme";
+  const STORAGE_KEY = "wondoo-site-theme";
   const root = document.documentElement;
   const themeToggleBtn = document.getElementById("theme-toggle");
   const themeLabel = document.getElementById("theme-toggle-label");
   const themeMeta = document.querySelector('meta[name="theme-color"]');
-  const printBtn = document.getElementById("print-cv-btn");
   const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
   function getSavedTheme() {
@@ -33,7 +32,7 @@
     root.dataset.theme = theme;
 
     if (themeMeta) {
-      themeMeta.setAttribute("content", isDark ? "#0c0f16" : "#fafaf8");
+      themeMeta.setAttribute("content", isDark ? "#0d1016" : "#f6f7f9");
     }
 
     if (themeToggleBtn) {
@@ -55,7 +54,6 @@
 
   updateThemeUI(resolveTheme());
 
-
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener("click", () => {
       const current = root.dataset.theme === "dark" ? "dark" : "light";
@@ -70,6 +68,17 @@
       updateThemeUI(event.matches ? "dark" : "light");
     }
   });
+
+  // Mobile navigation drawer
+  const mobileBtn = document.getElementById("mobile-menu-btn");
+  const mobileDrawer = document.getElementById("mobile-drawer");
+  if (mobileBtn && mobileDrawer) {
+    mobileBtn.addEventListener("click", () => {
+      const expanded = mobileBtn.getAttribute("aria-expanded") === "true";
+      mobileBtn.setAttribute("aria-expanded", String(!expanded));
+      mobileDrawer.classList.toggle("is-open", !expanded);
+    });
+  }
 
   // Publication category filtering
   const filterButtons = document.querySelectorAll(".filter-tab[data-filter]");
@@ -96,29 +105,4 @@
       }
     });
   });
-
-  // Print CV button + auto-expand contributions when printing
-  const contribDetails = document.querySelectorAll(".pub-contrib");
-  let priorOpenStates = [];
-
-  window.addEventListener("beforeprint", () => {
-    priorOpenStates = Array.from(contribDetails).map((el) => el.open);
-    contribDetails.forEach((el) => {
-      el.open = true;
-    });
-  });
-
-  window.addEventListener("afterprint", () => {
-    contribDetails.forEach((el, idx) => {
-      if (typeof priorOpenStates[idx] === "boolean") {
-        el.open = priorOpenStates[idx];
-      }
-    });
-  });
-
-  if (printBtn) {
-    printBtn.addEventListener("click", () => {
-      window.print();
-    });
-  }
 })();

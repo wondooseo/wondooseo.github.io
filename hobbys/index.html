@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Game reviews, Kendo, and travel logs of Won-Doo Seo.">
+  <meta name="theme-color" content="#f6f7f9">
+  <title>Hobbys — Won-Doo Seo</title>
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/favicon.png">
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem("wondoo-site-theme");
+        const preferred = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        const theme = saved === "light" || saved === "dark" ? saved : preferred;
+        document.documentElement.dataset.theme = theme;
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", theme === "dark" ? "#0d1016" : "#f6f7f9");
+      } catch {
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="brand" href="../">
+        <img class="brand-icon" src="../assets/favicon.png" alt="Won-Doo Seo logo" width="30" height="30">
+        <span>Won-Doo Seo</span>
+      </a>
+
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="../">HOME</a>
+          <a href="../cv/">CV</a>
+          <a href="../about-me/">ABOUT ME</a>
+          <a href="../publications/">PUBLICATIONS</a>
+          <a href="../hobbys/" aria-current="page">HOBBYS</a>
+          <a href="../contact/">CONTACT</a>
+        </nav>
+
+        <button id="theme-toggle" class="btn" type="button" aria-pressed="false" aria-label="Switch color theme">
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+          <span id="theme-toggle-label">Dark</span>
+        </button>
+
+        <button id="mobile-menu-btn" class="btn mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Toggle navigation menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <span>Menu</span>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-drawer" class="mobile-drawer" aria-label="Mobile navigation">
+      <a href="../">HOME</a>
+      <a href="../cv/">CV</a>
+      <a href="../about-me/">ABOUT ME</a>
+      <a href="../publications/">PUBLICATIONS</a>
+      <a href="../hobbys/" aria-current="page">HOBBYS</a>
+      <a href="../contact/">CONTACT</a>
+    </nav>
+  </header>
+
+  <div class="container page-shell">
+    <div class="layout-grid">
+      <aside class="sidebar" aria-label="Profile and site links">
+        <div class="sidebar-card">
+          <div class="sidebar-profile">
+            <img class="sidebar-avatar" src="../assets/images/profile.jpg" alt="Won-Doo Seo" width="52" height="52">
+            <div>
+              <div class="sidebar-name">Won-Doo Seo</div>
+              <div class="sidebar-handle">서원두 · AI Researcher</div>
+            </div>
+          </div>
+          <p class="sidebar-bio">
+            Full-time researcher @ Medical AI Lab, R&amp;D Center, Seers Technology. M.Sc. in Computer Science, Yonsei University.
+          </p>
+          <div class="sidebar-motto">&#x1F3C1; I MUST NOT FEAR &#x1F3C1;</div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-section-title">Connect &amp; Profiles</div>
+          <div class="social-list">
+            <a class="social-link" href="https://scholar.google.com/citations?user=WEnrQOYAAAAJ" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              <span>Google Scholar</span>
+            </a>
+            <a class="social-link" href="https://orcid.org/0000-0001-8944-4262" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 11v5"></path><path d="M8 8h.01"></path><path d="M12 16v-5h2a2.5 2.5 0 0 1 0 5h-2z"></path></svg>
+              <span>ORCID</span>
+            </a>
+            <a class="social-link" href="https://www.webofscience.com/wos/author/record/OZF-8499-2025" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg>
+              <span>Web of Science</span>
+            </a>
+            <a class="social-link" href="https://github.com/WondooSeo" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+              <span>GitHub</span>
+            </a>
+            <a class="social-link" href="https://www.linkedin.com/in/wondooseo/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a class="social-link" href="https://www.instagram.com/miracleboy_wondoo/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              <span>Instagram</span>
+            </a>
+            <a class="social-link" href="mailto:sentryradar@naver.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-section-title">Menu</div>
+          <nav class="category-list" aria-label="Sidebar page directory">
+            <a class="category-link" href="../"><span>HOME</span><span class="category-count">Summary</span></a>
+            <a class="category-link" href="../cv/"><span>CV</span><span class="category-count">Draft</span></a>
+            <a class="category-link" href="../about-me/"><span>ABOUT ME</span><span class="category-count">4</span></a>
+            <a class="category-link" href="../publications/"><span>PUBLICATIONS</span><span class="category-count">6</span></a>
+            <a class="category-link" href="../hobbys/" aria-current="page"><span>HOBBYS</span><span class="category-count">3</span></a>
+            <a class="category-link" href="../contact/"><span>CONTACT</span><span class="category-count">Info</span></a>
+          </nav>
+        </div>
+      </aside>
+
+      <main id="main-content" class="main-col">
+        <section class="card">
+          <div class="eyebrow">Hobbys</div>
+          <h1 class="page-title">Game Review, Kendo &amp; Travel</h1>
+          <p class="page-subtitle">Personal reviews, martial arts training updates, and travel photography</p>
+          <div class="subnav-pills">
+            <a class="subnav-pill" href="#game-review">Game Review</a>
+            <a class="subnav-pill" href="#kendo">Kendo</a>
+            <a class="subnav-pill" href="#travel">Travel</a>
+          </div>
+        </section>
+
+        <section id="game-review" class="card">
+          <div class="section-card-head">
+            <h2 class="section-heading">Game Review</h2>
+            <span class="section-meta">Now Playing &amp; Tier List</span>
+          </div>
+
+          <div class="entry-stack">
+            <div class="entry-item">
+              <h3 class="entry-title">Now Playing...</h3>
+              <ul class="entry-list">
+                <li><strong>Super Mario 64 (Switch)</strong> — Nintendo EAD · 1996.06 · Play Time: 5h+ (now)</li>
+                <li><strong>Super Mario Galaxy (Switch)</strong> — Nintendo EAD Tokyo · 2007.11 · Play Time: 5h+ (now)</li>
+                <li><strong>Super Mario 3D World + Bowser's Fury (Switch)</strong> — Nintendo EPD &amp; 1-UP Studio · 2013.11 / 2021.02 · Play Time: 30h+ (now)</li>
+                <li><strong>Kirby and the Forgotten Land (Switch)</strong> — HAL Laboratory · 2022.03 · Play Time: 30h+ (now)</li>
+                <li><strong>Horizon Forbidden West (PS4)</strong> — Guerrilla Games · 2022.02 · Play Time: 90h (now)</li>
+              </ul>
+            </div>
+
+            <div class="entry-item">
+              <h3 class="entry-title">Rated Games</h3>
+              <div class="tier-group" style="margin-top: 0.75rem;">
+                <div class="tier-row">
+                  <div>
+                    <span class="rating-stars">★★★★★</span>
+                    <span class="tier-sub">Must Play</span>
+                  </div>
+                  <div class="tag-list">
+                    <span class="tag">A Hat in Time (PC)</span>
+                    <span class="tag">Horizon Zero Dawn (PS4)</span>
+                    <span class="tag">Ori and the Blind Forest (PC)</span>
+                    <span class="tag">Persona 3 Reload (PS4)</span>
+                    <span class="tag">Persona 4 The Golden (PS4)</span>
+                    <span class="tag">Persona 5 The Royal (PS4)</span>
+                    <span class="tag">Super Mario Odyssey (Switch)</span>
+                    <span class="tag">VA-11 Hall-A (PC)</span>
+                  </div>
+                </div>
+
+                <div class="tier-row">
+                  <div>
+                    <span class="rating-stars">★★★★</span>
+                    <span class="tier-sub">Worth to Play</span>
+                  </div>
+                  <div class="tag-list">
+                    <span class="tag tag--neutral">Celeste (PC)</span>
+                    <span class="tag tag--neutral">Ghost of Tsushima (PS4)</span>
+                    <span class="tag tag--neutral">God of War III Remastered (PS4)</span>
+                    <span class="tag tag--neutral">NieR: Automata (PS4)</span>
+                    <span class="tag tag--neutral">Persona 5 Scramble (PS4)</span>
+                    <span class="tag tag--neutral">Ratchet &amp; Clank (PS4)</span>
+                  </div>
+                </div>
+
+                <div class="tier-row">
+                  <div>
+                    <span class="rating-stars">★★★</span>
+                    <span class="tier-sub">Enjoyable</span>
+                  </div>
+                  <div class="tag-list">
+                    <span class="tag tag--neutral">Baba is You (PC)</span>
+                    <span class="tag tag--neutral">Doki Doki Literature Club! (PC)</span>
+                    <span class="tag tag--neutral">Goat Simulator (PC)</span>
+                    <span class="tag tag--neutral">Helltaker (PC)</span>
+                    <span class="tag tag--neutral">The Room (PC)</span>
+                    <span class="tag tag--neutral">The Room Two (PC)</span>
+                  </div>
+                </div>
+
+                <div class="tier-row">
+                  <div>
+                    <span class="rating-stars">★★</span>
+                    <span class="tier-sub">Mediocre</span>
+                  </div>
+                  <div class="tag-list">
+                    <span class="tag tag--neutral">Persona 3 Portable (PS4)</span>
+                    <span class="tag tag--neutral">The Room Three (PC)</span>
+                  </div>
+                </div>
+
+                <div class="tier-row">
+                  <div>
+                    <span class="rating-stars">★</span>
+                    <span class="tier-sub">Not Recommended</span>
+                  </div>
+                  <div class="tag-list">
+                    <span class="tag tag--neutral">Soul Hackers 2 (PS4)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="entry-item">
+              <h3 class="entry-title">Detailed Reviews</h3>
+              <div class="entry-stack" style="margin-top: 0.75rem;">
+                <div>
+                  <div class="entry-head">
+                    <strong>Horizon Zero Dawn (PS4) · <span class="rating-stars">★★★★★</span></strong>
+                    <span class="entry-period">Metacritic 89 · 90h (Platinum + DLC)</span>
+                  </div>
+                  <p class="entry-desc">Guerrilla Games / SIE · Director: Mathjis de Jonge · 2017.02</p>
+                  <div class="quote-box">
+                    "MUST play game. Horizon Zero Dawn is one of the games opened golden era of open world RPG in 2017. Hunting-like monster raid, attractive storyline based on lost technology, awesome graphics made Aloy as a powerful IP of Guerrilla Games. But there is a serious shortcoming; progression of important sub-story quests are not mandatory, and it overshadows storyline which is one of the game's strengths."
+                  </div>
+                </div>
+
+                <div class="entry-item">
+                  <div class="entry-head">
+                    <strong>Persona 5 The Royal (PS4) · <span class="rating-stars">★★★★★</span></strong>
+                    <span class="entry-period">Metacritic 95 · 170h (Platinum / NG+)</span>
+                  </div>
+                  <p class="entry-desc">ATLUS / Sega · Director: Daiki Itoh · 2017.02</p>
+                  <div class="quote-box">
+                    "JUST DO IT!!! All time legendary JRPG game ever. Only the thing you should be careful of is spoiler."
+                  </div>
+                </div>
+
+                <div class="entry-item">
+                  <div class="entry-head">
+                    <strong>Ghost of Tsushima (PS4) · <span class="rating-stars">★★★★</span></strong>
+                    <span class="entry-period">Metacritic 83 (DC 87) · 81h (Platinum + DLC)</span>
+                  </div>
+                  <p class="entry-desc">Sucker Punch Productions / SIE · Director: Nate Fox / Jason Connell · 2020.07</p>
+                  <div class="quote-box">
+                    "Awesome soundtrack, high-quality graphics with super fast loading speed(!) and the story of Jin Sakai make the game as a masterpiece title of PS4 twilight era. Repetitive side quests make fatigue; that's a tiny pitfall."
+                  </div>
+                </div>
+
+                <div class="entry-item">
+                  <div class="entry-head">
+                    <strong>NieR: Automata (PS4) · <span class="rating-stars">★★★★</span></strong>
+                    <span class="entry-period">Metacritic 88 (YoRHa 91) · 110h (Platinum / Ending E)</span>
+                  </div>
+                  <p class="entry-desc">PlatinumGames / Square Enix · Director: Yoko Taro · 2017.02</p>
+                  <div class="quote-box">
+                    "Journey to the desperate world with nostalgic music and absorbing play experience. Someone may like it and some may not like, but it is worth to play anyway. A perfect third base steal after double of Square Enix."
+                  </div>
+                </div>
+
+                <div class="entry-item">
+                  <div class="entry-head">
+                    <strong>Ratchet &amp; Clank (PS4) · <span class="rating-stars">★★★★</span></strong>
+                    <span class="entry-period">Metacritic 85 · 31h (Platinum / NG+)</span>
+                  </div>
+                  <p class="entry-desc">Insomniac Games / SIE · Director: Shaun McCabe / Chad Dezern / Brian Allgeier · 2016.04</p>
+                  <div class="quote-box">
+                    "Classic! Ratchet &amp; Clank series introduces players the way how they play the PlayStation console. You must play it after you own PS4. Strongly recommended for the PS4 beginners. Nice combination of space opera and black comedy behind charming cartoon graphic. But if you play it more intensively, you can find some small problems like slightly scanty storyline, or the weak chemistry between Ratchet and Clank."
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="kendo" class="card">
+          <div class="section-card-head">
+            <h2 class="section-heading">Kendo (劍道)</h2>
+            <span class="section-meta">Way of the Sword</span>
+          </div>
+
+          <div class="entry-stack">
+            <div class="entry-item">
+              <h3 class="entry-title">Recent News</h3>
+              <div class="entry-stack" style="gap: 0.55rem; margin-top: 0.55rem;">
+                <div class="entry-head">
+                  <span>Moved up to Nidan (貳段) at once! Go for Sandan (參段) bro!</span>
+                  <span class="entry-period">2024.06.28</span>
+                </div>
+                <div class="entry-head">
+                  <span>Moved up to Shodan (初段) after two attempts!</span>
+                  <span class="entry-period">2023.02.23</span>
+                </div>
+                <div class="entry-head">
+                  <span>Won third place on 19th Seongnam-si Kumdo Convention (Kyu division)</span>
+                  <span class="entry-period">2022.09.03</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="entry-item">
+              <h3 class="entry-title">What is Kendo? &amp; Core Values</h3>
+              <p class="entry-desc">
+                Modern Kendo training involves practitioners using a bamboo sword (竹刀) and wearing protective armor (護具), strengthening body and mind while learning respect, self-development, and courtesy (禮), faith (活人劍), and harmony of concentration, sword, and body (氣劍體一致 · 心氣力一致).
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="travel" class="card">
+          <div class="section-card-head">
+            <h2 class="section-heading">Travel</h2>
+            <span class="section-meta">Photo Logs</span>
+          </div>
+
+          <div class="photo-grid">
+            <figure class="photo-card">
+              <div class="photo-frame">
+                <img src="../assets/images/travel-hokkaido.jpg" alt="Goryokaku Star Fort in Hakodate, Hokkaido" loading="lazy">
+              </div>
+              <figcaption class="photo-caption">
+                <div class="photo-title">Hokkaido, Japan</div>
+                <div class="photo-meta">2024.09.18 - 2024.09.21 · Goryokaku, Hakodate</div>
+              </figcaption>
+            </figure>
+
+            <figure class="photo-card">
+              <div class="photo-frame">
+                <img src="../assets/images/travel-tokyo23.jpg" alt="Ochanomizu river bridge and subway train in Tokyo" loading="lazy">
+              </div>
+              <figcaption class="photo-caption">
+                <div class="photo-title">Tokyo, Japan</div>
+                <div class="photo-meta">2023.09.27 - 2023.10.01 · Ochanomizu</div>
+              </figcaption>
+            </figure>
+
+            <figure class="photo-card">
+              <div class="photo-frame">
+                <img src="../assets/images/travel-tokyo18.jpg" alt="Tokyo street view" loading="lazy">
+              </div>
+              <figcaption class="photo-caption">
+                <div class="photo-title">Tokyo, Japan</div>
+                <div class="photo-meta">2018.08.16 - 2018.08.22</div>
+              </figcaption>
+            </figure>
+
+            <figure class="photo-card">
+              <div class="photo-frame">
+                <img src="../assets/images/travel-anz.jpg" alt="Sydney Harbour Bridge at night" loading="lazy">
+              </div>
+              <figcaption class="photo-caption">
+                <div class="photo-title">New Zealand &amp; Australia</div>
+                <div class="photo-meta">2017.02.04 - 2017.02.13 · Sydney Harbour Bridge</div>
+              </figcaption>
+            </figure>
+
+            <figure class="photo-card">
+              <div class="photo-frame">
+                <img src="../assets/images/travel-railro.jpg" alt="Yeosu Expo Station during Rail-Ro trip" loading="lazy">
+              </div>
+              <figcaption class="photo-caption">
+                <div class="photo-title">Rail-Ro Trip</div>
+                <div class="photo-meta">2016.08.06 - 2016.08.10 · Yeosu Expo Station</div>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-motto">&#x1F3C1; I MUST NOT FEAR &#x1F3C1;</div>
+      <div>COPYRIGHT &copy; 2020-2026 Won-Doo Seo, ALL RIGHTS RESERVED.</div>
+    </div>
+  </footer>
+
+  <script src="../assets/script.js"></script>
+</body>
+</html>
