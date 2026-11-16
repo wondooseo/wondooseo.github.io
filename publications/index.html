@@ -163,28 +163,60 @@
           <span id="pub-filter-status" class="sr-only" aria-live="polite">Showing 6 items</span>
         </section>
 
+        <!--
+          ==========================================================================
+          PUBLICATIONS FORMATTING & STYLING SPECIFICATION
+          ==========================================================================
+          1. Category Badge Color Pairing (defined in assets/styles.css):
+             - International Journal    : .type-badge--journal       (Emerald Green)
+             - International Conference : .type-badge--conference    (Royal Blue)
+             - Domestic Journal         : .type-badge--domestic      (Violet)
+             - Domestic Conference      : .type-badge--domestic-conf (Rose, reserved)
+             - Patent                   : .type-badge--patent        (Amber)
+
+          2. Top-Right Date Format (.pub-year):
+             - Always use "YYYY. MM." (zero-padded 2-digit month with trailing dots).
+
+          3. Citation Format (.pub-venue):
+             - Journal    : <em>{Journal Full Name}</em>, {Vol}({Issue}):{Page}, {Year}.
+                            (Omit "({Issue})" if the journal does not assign issue numbers -> "{Vol}:{Page}")
+             - Conference : <em>{Conference Full Name (ABBR) [Year if in official name]}</em>, {City}, {Official Country Name}, {Date Range}, {Year}.
+             - Patent     : {Patent Number}, {Grant Date}.
+
+          4. Contributions Block (.pub-contrib):
+             - Always expanded (render as static <div>, not collapsible <details>).
+             - Heading text is strictly "Contributions" (do not repeat author role suffix).
+
+          5. Publication Link Policy (.pub-links):
+             - All primary publication links on this page MUST use DOI URLs only
+               (https://doi.org/... or http://dx.doi.org/...), never direct publisher/PDF URLs.
+             - Button label for the DOI link MUST be strictly "DOI" (never "Paper" or raw DOI strings),
+               paired with supplementary code links (e.g. "Dataset Code", "Model Code") when available.
+          ==========================================================================
+        -->
+
         <article class="card pub-card" data-category="journal">
           <div class="pub-top">
             <div class="pub-badges">
               <span class="type-badge type-badge--journal">International Journal</span>
               <span class="role-badge">First Author</span>
             </div>
-            <span class="pub-year">2026</span>
+            <span class="pub-year">2026. 07.</span>
           </div>
           <h2 class="pub-title">Calibration-Based Continuous Blood Pressure Estimation Using Pulse-Derived Signals and Feature Normalization</h2>
           <p class="pub-authors"><span class="author-self">Won-Doo Seo*</span>, Insung Choi, Kyung Chul Kim, Hee Seok Song and Yun Kwan Kim†</p>
-          <p class="pub-venue"><em>Biomedical Signal Processing and Control</em>, Vol. 120, 109852, 2026.</p>
+          <p class="pub-venue"><em>Biomedical Signal Processing and Control</em>, 120:109852, 2026.</p>
           <div class="pub-links">
-            <a class="pub-link-btn" href="https://doi.org/10.1016/j.bspc.2026.109852" target="_blank" rel="noopener noreferrer">DOI: 10.1016/j.bspc.2026.109852</a>
+            <a class="pub-link-btn" href="https://doi.org/10.1016/j.bspc.2026.109852" target="_blank" rel="noopener noreferrer" title="DOI: 10.1016/j.bspc.2026.109852">DOI</a>
           </div>
-          <details class="pub-contrib">
-            <summary>Contributions (First author)</summary>
+          <div class="pub-contrib">
+            <h3 class="pub-contrib-title">Contributions</h3>
             <ul>
               <li>Encapsulate and proceed all research processes including designs and experiments</li>
               <li>Propose a new calibration data fusion method using affine transformation and residual block with squeeze-and-excitation</li>
               <li>Improve estimation performance with negligible computational cost increment compare to previous works</li>
             </ul>
-          </details>
+          </div>
         </article>
 
         <article class="card pub-card" data-category="journal">
@@ -193,21 +225,21 @@
               <span class="type-badge type-badge--journal">International Journal</span>
               <span class="role-badge">Second Author</span>
             </div>
-            <span class="pub-year">2026</span>
+            <span class="pub-year">2026. 03.</span>
           </div>
           <h2 class="pub-title">Deep Learning-Based Estimation of Lung Collapse in Electrical Impedance Tomography: A Simulated and Phantom Study</h2>
           <p class="pub-authors">Hana Jang*, <span class="author-self">Won-Doo Seo</span>, You Jeong Jeong, Tong In Oh and Hyeuknam Kwon†</p>
-          <p class="pub-venue"><em>Physiological Measurement</em>, Vol. 47, No. 3, 035005, 2026.</p>
+          <p class="pub-venue"><em>Physiological Measurement</em>, 47(3):035005, 2026.</p>
           <div class="pub-links">
-            <a class="pub-link-btn" href="https://doi.org/10.1088/1361-6579/ae4849" target="_blank" rel="noopener noreferrer">DOI: 10.1088/1361-6579/ae4849</a>
+            <a class="pub-link-btn" href="https://doi.org/10.1088/1361-6579/ae4849" target="_blank" rel="noopener noreferrer" title="DOI: 10.1088/1361-6579/ae4849">DOI</a>
           </div>
-          <details class="pub-contrib">
-            <summary>Contributions (Second author)</summary>
+          <div class="pub-contrib">
+            <h3 class="pub-contrib-title">Contributions</h3>
             <ul>
               <li>Encapsulate and proceed EIT simulation experiment and its process including designs and experiments</li>
               <li>Suggest deep learning-based lung collapse score instead of using GI index</li>
             </ul>
-          </details>
+          </div>
         </article>
 
         <article class="card pub-card" data-category="patent">
@@ -216,13 +248,13 @@
               <span class="type-badge type-badge--patent">Patent</span>
               <span class="role-badge">First Inventor</span>
             </div>
-            <span class="pub-year">2025</span>
+            <span class="pub-year">2025. 08.</span>
           </div>
           <h2 class="pub-title">Deep Learning-Based Cuffless Blood Pressure Estimation System and Method Using Original PPG Signal and Differential Signals</h2>
           <p class="pub-authors"><span class="author-self">Won-Doo Seo*</span>, Yun Kwan Kim, Gyung Chul Kim and Young Shin Lee</p>
           <p class="pub-venue">KR 10-2846998, Aug. 12, 2025.</p>
           <div class="pub-links">
-            <a class="pub-link-btn" href="https://doi.org/10.8080/1020240161444" target="_blank" rel="noopener noreferrer">DOI: 10.8080/1020240161444</a>
+            <a class="pub-link-btn" href="https://doi.org/10.8080/1020240161444" target="_blank" rel="noopener noreferrer" title="DOI: 10.8080/1020240161444">DOI</a>
           </div>
         </article>
 
@@ -232,23 +264,23 @@
               <span class="type-badge type-badge--journal">International Journal</span>
               <span class="role-badge">Second Author</span>
             </div>
-            <span class="pub-year">2024</span>
+            <span class="pub-year">2024. 09.</span>
           </div>
           <h2 class="pub-title">Early Prediction of Cardiac Arrest in the Intensive Care Unit Using Explainable Machine Learning: Retrospective Study</h2>
           <p class="pub-authors">Yun Kwan Kim*, <span class="author-self">Won-Doo Seo</span>, Sun Jung Lee, Ja Hyung Koo, Kyung Chul Kim, Hee Seok Song and Minji Lee†</p>
-          <p class="pub-venue"><em>Journal of Medical Internet Research</em>, Vol. 26, e62890, 2024.</p>
+          <p class="pub-venue"><em>Journal of Medical Internet Research</em>, 26:e62890, 2024.</p>
           <div class="pub-links">
-            <a class="pub-link-btn" href="https://doi.org/10.2196/62890" target="_blank" rel="noopener noreferrer">DOI: 10.2196/62890</a>
+            <a class="pub-link-btn" href="https://doi.org/10.2196/62890" target="_blank" rel="noopener noreferrer" title="DOI: 10.2196/62890">DOI</a>
           </div>
-          <details class="pub-contrib">
-            <summary>Contributions (Second author)</summary>
+          <div class="pub-contrib">
+            <h3 class="pub-contrib-title">Contributions</h3>
             <ul>
               <li>Preprocess datasets (i.e., eICU and MIMIC-IV)</li>
               <li>Make a code of pseudo-running &amp; model evaluate program using Python</li>
               <li>Suggest Gini index-based new feature</li>
               <li>Organize metric results</li>
             </ul>
-          </details>
+          </div>
         </article>
 
         <article class="card pub-card" data-category="conference">
@@ -257,23 +289,23 @@
               <span class="type-badge type-badge--conference">International Conference</span>
               <span class="role-badge">First &amp; Corresponding Author</span>
             </div>
-            <span class="pub-year">2022</span>
+            <span class="pub-year">2022. 06.</span>
           </div>
           <h2 class="pub-title">The Degree of Lung Collapse Estimation Method using Convolutional Autoencoder and Neural Regression in Electrical Impedance Tomography</h2>
           <p class="pub-authors"><span class="author-self">Won-Doo Seo*†</span> and Hyeuknam Kwon†</p>
           <p class="pub-venue"><em>International Conference on Bioelectromagnetism, Electrical Bioimpedance, and Electrical Impedance Tomography (ICBEM-ICEBI-EIT) 2022</em>, Seoul, Republic of Korea, June 29-July 1, 2022.</p>
           <div class="pub-links">
-            <a class="pub-link-btn" href="http://dx.doi.org/10.13140/RG.2.2.33645.05604" target="_blank" rel="noopener noreferrer">DOI: 10.13140/RG.2.2.33645.05604</a>
-            <a class="pub-link-btn" href="https://github.com/WondooSeo/Making_EIT_Data_with_EIDORS" target="_blank" rel="noopener noreferrer">Dataset Generate Code</a>
+            <a class="pub-link-btn" href="http://dx.doi.org/10.13140/RG.2.2.33645.05604" target="_blank" rel="noopener noreferrer" title="DOI: 10.13140/RG.2.2.33645.05604">DOI</a>
+            <a class="pub-link-btn" href="https://github.com/WondooSeo/Making_EIT_Data_with_EIDORS" target="_blank" rel="noopener noreferrer">Dataset Code</a>
             <a class="pub-link-btn" href="https://github.com/WondooSeo/Convolutional_AutoEncoder_Neural_Regression" target="_blank" rel="noopener noreferrer">Model Code</a>
           </div>
-          <details class="pub-contrib">
-            <summary>Contributions (First &amp; Corresponding author)</summary>
+          <div class="pub-contrib">
+            <h3 class="pub-contrib-title">Contributions</h3>
             <ul>
               <li>Develop real axial lung CT image-based counterfeit EIT image generation codes using Matlab</li>
               <li>Propose a model that estimates how much lung collapsed with a single EIT image by concatenating Convolutional Auto Encoder and Neural Regression (CAENR) using Python and Keras</li>
             </ul>
-          </details>
+          </div>
         </article>
 
         <article class="card pub-card" data-category="domestic">
@@ -282,21 +314,21 @@
               <span class="type-badge type-badge--domestic">Domestic Journal</span>
               <span class="role-badge">First Author</span>
             </div>
-            <span class="pub-year">2020</span>
+            <span class="pub-year">2020. 12.</span>
           </div>
           <h2 class="pub-title">Simultaneous Inter-Channel EEG Activation and Brain Functional Connectivity</h2>
           <p class="pub-authors"><span class="author-self">Won-Doo Seo*</span> and Han Ul Yoon†</p>
-          <p class="pub-venue"><em>Journal of the Korean Institute of Intelligent Systems</em>, Vol. 30, No. 6, pp. 465-471, 2020.</p>
+          <p class="pub-venue"><em>Journal of the Korean Institute of Intelligent Systems</em>, 30(6):465-471, 2020.</p>
           <div class="pub-links">
-            <a class="pub-link-btn" href="https://doi.org/10.5391/jkiis.2020.30.6.465" target="_blank" rel="noopener noreferrer">DOI: 10.5391/jkiis.2020.30.6.465</a>
+            <a class="pub-link-btn" href="https://doi.org/10.5391/jkiis.2020.30.6.465" target="_blank" rel="noopener noreferrer" title="DOI: 10.5391/jkiis.2020.30.6.465">DOI</a>
           </div>
-          <details class="pub-contrib">
-            <summary>Contributions (First author)</summary>
+          <div class="pub-contrib">
+            <h3 class="pub-contrib-title">Contributions</h3>
             <ul>
               <li>Find a relationship between somato-sensory cortex and prefrontal cortex by analyzing event-related potential and visualizing simultaneous inter-channel EEG activation</li>
               <li>Check the possibility of presenting the recovery stage of stroke patients' gait function quantitatively who are provided exoskeleton robot rehabilitation</li>
             </ul>
-          </details>
+          </div>
         </article>
       </main>
     </div>

@@ -43,9 +43,17 @@
   --tag-conf-text: #1e40af;
   --tag-conf-border: #bfdbfe;
 
+  /* Publication Category Color System (Light Mode):
+     - International: Emerald (~160deg, Journal) -> Royal Blue (~220deg, Conference)
+     - Domestic:      Violet (~265deg, Journal)  -> Rose (~335deg, Conference, reserved)
+     - Patent:        Amber (~40deg) */
   --tag-domestic-bg: #f5f3ff;
   --tag-domestic-text: #5b21b6;
   --tag-domestic-border: #ddd6fe;
+
+  --tag-domestic-conf-bg: #fdf2f8;
+  --tag-domestic-conf-text: #9d174d;
+  --tag-domestic-conf-border: #fbcfe8;
 
   --tag-patent-bg: #fffbeb;
   --tag-patent-text: #92400e;
@@ -107,6 +115,10 @@
     --tag-domestic-text: #c4b5fd;
     --tag-domestic-border: rgba(167, 139, 250, 0.32);
 
+    --tag-domestic-conf-bg: rgba(244, 114, 182, 0.15);
+    --tag-domestic-conf-text: #f9a8d4;
+    --tag-domestic-conf-border: rgba(244, 114, 182, 0.32);
+
     --tag-patent-bg: rgba(245, 158, 11, 0.15);
     --tag-patent-text: #fcd34d;
     --tag-patent-border: rgba(245, 158, 11, 0.32);
@@ -156,6 +168,10 @@
   --tag-domestic-bg: rgba(167, 139, 250, 0.15);
   --tag-domestic-text: #c4b5fd;
   --tag-domestic-border: rgba(167, 139, 250, 0.32);
+
+  --tag-domestic-conf-bg: rgba(244, 114, 182, 0.15);
+  --tag-domestic-conf-text: #f9a8d4;
+  --tag-domestic-conf-border: rgba(244, 114, 182, 0.32);
 
   --tag-patent-bg: rgba(245, 158, 11, 0.15);
   --tag-patent-text: #fcd34d;
@@ -1033,6 +1049,13 @@ img {
   border-color: var(--tag-domestic-border);
 }
 
+/* Reserved for future Domestic Conference entries (pairs with Violet Domestic Journal) */
+.type-badge--domestic-conf {
+  background-color: var(--tag-domestic-conf-bg);
+  color: var(--tag-domestic-conf-text);
+  border-color: var(--tag-domestic-conf-border);
+}
+
 .type-badge--patent {
   background-color: var(--tag-patent-bg);
   color: var(--tag-patent-text);
@@ -1120,37 +1143,14 @@ img {
   border-top: 1px dashed var(--border-subtle);
 }
 
-.pub-contrib summary {
-  cursor: pointer;
+.pub-contrib-title {
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-secondary);
-  list-style: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.pub-contrib summary::-webkit-details-marker {
-  display: none;
-}
-
-.pub-contrib summary::before {
-  content: "\25B8";
-  font-size: 0.75rem;
-  color: var(--accent);
-}
-
-.pub-contrib[open] summary::before {
-  content: "\25BE";
-}
-
-.pub-contrib summary:hover {
-  color: var(--accent);
 }
 
 .pub-contrib ul {
-  margin-top: 0.55rem;
+  margin-top: 0.45rem;
   font-size: 0.9rem;
   font-weight: 400;
   color: var(--text-secondary);
