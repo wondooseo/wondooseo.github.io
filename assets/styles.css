@@ -285,9 +285,6 @@ img {
   padding: 0 1.5rem;
 }
 
-.tabular {
-  font-variant-numeric: tabular-nums;
-}
 
 /* ==========================================================================
    Header & Single-Row Top-Right Navigation
@@ -719,18 +716,6 @@ img {
   background-color: var(--text-muted);
 }
 
-.sidebar-motto {
-  margin-top: 0.9rem;
-  padding: 0.5rem 0.75rem;
-  border-radius: var(--radius-sm);
-  background-color: var(--bg-subtle);
-  border: 1px solid var(--border-subtle);
-  text-align: center;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  color: var(--text-primary);
-}
 
 .sidebar-section-title {
   font-size: 0.76rem;
@@ -842,12 +827,6 @@ img {
   font-weight: 600;
 }
 
-.category-count {
-  font-size: 0.76rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  font-variant-numeric: tabular-nums;
-}
 
 /* ==========================================================================
    Main Content & Cards
@@ -959,11 +938,6 @@ img {
   color: var(--text-primary);
 }
 
-.section-meta {
-  font-size: 0.84rem;
-  font-weight: 500;
-  color: var(--text-muted);
-}
 
 .entry-stack {
   display: flex;
@@ -1143,7 +1117,7 @@ img {
 }
 
 /* ==========================================================================
-   Subpage Section Jump Pills & CV Empty Placeholder
+   Section Tabs, Embedded Frames & Activity Details
    ========================================================================== */
 
 .subnav-pills {
@@ -1153,29 +1127,6 @@ img {
   margin-top: 1rem;
 }
 
-.subnav-pill {
-  padding: 0.34rem 0.78rem;
-  border-radius: var(--radius-pill);
-  background-color: var(--bg-subtle);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-secondary);
-  font-size: 0.83rem;
-  font-weight: 500;
-}
-
-.subnav-pill:hover {
-  background-color: var(--accent-soft);
-  border-color: var(--accent-border);
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.subnav-pill[aria-current="page"] {
-  background-color: var(--accent);
-  border-color: var(--accent);
-  color: var(--on-accent);
-  font-weight: 600;
-}
 
 .eyebrow-link {
   color: inherit;
@@ -1187,38 +1138,6 @@ img {
   text-decoration: underline;
 }
 
-.cv-placeholder {
-  min-height: 360px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 0.65rem;
-  border: 1.5px dashed var(--border-strong);
-  border-radius: var(--radius-md);
-  background-color: var(--bg-subtle);
-  padding: 2.5rem 1.5rem;
-}
-
-.cv-placeholder-title {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.cv-placeholder-desc {
-  max-width: 46ch;
-  font-size: 0.9rem;
-  font-weight: 400;
-  color: var(--text-muted);
-}
-
-.cv-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
 
 .cv-embed-wrap {
   border: 1px solid var(--border-subtle);
@@ -1416,19 +1335,6 @@ img {
   letter-spacing: 0.02em;
 }
 
-.status-muted {
-  display: inline-block;
-  margin-left: 0.35rem;
-  padding: 0.06rem 0.42rem;
-  border-radius: var(--radius-sm);
-  background-color: var(--bg-subtle);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-muted);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  vertical-align: middle;
-}
 
 .map-embed-wrap {
   width: 100%;
@@ -1447,39 +1353,11 @@ img {
   border: 0;
 }
 
-.map-setup-box {
-  min-height: 360px;
-  padding: 2rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 0.65rem;
-}
-
-.map-setup-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.map-setup-desc {
-  max-width: 48ch;
-  font-size: 0.88rem;
-  color: var(--text-muted);
-}
 
 /* ==========================================================================
    Publications Filters & Cards
    ========================================================================== */
 
-.filter-bar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.45rem;
-}
 
 .filter-tab {
   padding: 0.38rem 0.82rem;
@@ -1789,11 +1667,6 @@ img {
   padding-bottom: 0;
 }
 
-.tier-label {
-  font-size: 0.84rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
 
 .tier-sub {
   display: block;
@@ -1898,6 +1771,7 @@ img {
 .card,
 .entry-title,
 .entry-org,
+.entry-location,
 .entry-desc,
 .entry-list,
 .pub-title,
@@ -2026,12 +1900,6 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .social-list,
-  .category-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.35rem;
-  }
 
   .card,
   .hero-welcome {
@@ -2083,10 +1951,6 @@ img {
     gap: 0.3rem;
   }
 
-  .social-list,
-  .category-list {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* ==========================================================================
