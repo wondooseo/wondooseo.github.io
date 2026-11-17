@@ -692,10 +692,31 @@ img {
 
 .sidebar-bio {
   margin-top: 0.9rem;
-  font-size: 0.88rem;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.42rem;
+  font-size: 0.87rem;
   font-weight: 400;
   color: var(--text-secondary);
-  line-height: 1.55;
+  line-height: 1.5;
+}
+
+.sidebar-bio li {
+  position: relative;
+  padding-left: 0.82rem;
+}
+
+.sidebar-bio li::before {
+  content: "";
+  position: absolute;
+  left: 0.08rem;
+  top: 0.52rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 1px;
+  background-color: var(--text-muted);
 }
 
 .sidebar-motto {
