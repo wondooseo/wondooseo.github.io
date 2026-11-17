@@ -8,6 +8,13 @@
   <title>Publications — Won-Doo Seo</title>
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="apple-touch-icon" href="../assets/favicon.png">
+  <!-- Google Tag (GTM-M3R2VSDX) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-M3R2VSDX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script>
   <script>
     (() => {
       try {
@@ -41,7 +48,19 @@
           <a href="../cv/">CV</a>
           <a href="../about-me/">ABOUT ME</a>
           <a href="../publications/" aria-current="page">PUBLICATIONS</a>
-          <a href="../hobbys/">HOBBYS</a>
+          <div class="nav-item has-submenu">
+            <div class="nav-dropdown-trigger">
+              <a href="../hobbies/">HOBBIES</a>
+              <button class="nav-submenu-btn" type="button" aria-expanded="false" aria-controls="desktop-hobbies-menu" aria-label="Toggle Hobbies submenu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+            </div>
+            <div id="desktop-hobbies-menu" class="nav-submenu" role="menu" aria-label="Hobbies submenu">
+              <a href="../hobbies/game-review/" role="menuitem">Game Review</a>
+              <a href="../hobbies/travel/" role="menuitem">Travel</a>
+              <a href="../hobbies/kendo/" role="menuitem">Kendo</a>
+            </div>
+          </div>
           <a href="../contact/">CONTACT</a>
         </nav>
 
@@ -79,7 +98,19 @@
       <a href="../cv/">CV</a>
       <a href="../about-me/">ABOUT ME</a>
       <a href="../publications/" aria-current="page">PUBLICATIONS</a>
-      <a href="../hobbys/">HOBBYS</a>
+      <div class="mobile-nav-group">
+        <div class="mobile-nav-row">
+          <a href="../hobbies/">HOBBIES</a>
+          <button class="mobile-submenu-toggle" type="button" aria-expanded="false" aria-controls="mobile-hobbies-submenu" aria-label="Toggle Hobbies submenu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </button>
+        </div>
+        <div id="mobile-hobbies-submenu" class="mobile-submenu">
+          <a href="../hobbies/game-review/">Game Review</a>
+          <a href="../hobbies/travel/">Travel</a>
+          <a href="../hobbies/kendo/">Kendo</a>
+        </div>
+      </div>
       <a href="../contact/">CONTACT</a>
     </nav>
   </header>
@@ -87,22 +118,41 @@
   <div class="container page-shell">
     <div class="layout-grid">
       <aside class="sidebar" aria-label="Profile and site links">
-        <div class="sidebar-card">
+        <div class="sidebar-card sidebar-profile-card">
           <div class="sidebar-profile">
             <img class="sidebar-avatar" src="../assets/images/profile.jpg" alt="Won-Doo Seo" width="52" height="52">
             <div>
               <div class="sidebar-name">Won-Doo Seo</div>
-              <div class="sidebar-handle">서원두 · AI Researcher</div>
+              <div class="sidebar-handle">AI Researcher</div>
             </div>
           </div>
           <p class="sidebar-bio">
-            Full-time researcher @ Medical AI Lab, R&amp;D Center, Seers Technology. M.Sc. in Computer Science, Yonsei University.
+            Full-Time Researcher @ AI Team, AI Lab, SEERS<br>
+            M. Sc. in Computer Science (Wonju), Yonsei University
           </p>
-          <div class="sidebar-motto">&#x1F3C1; I MUST NOT FEAR &#x1F3C1;</div>
         </div>
 
-        <div class="sidebar-card">
-          <div class="sidebar-section-title">Connect &amp; Profiles</div>
+        <div class="sidebar-card sidebar-menu-card">
+          <div class="sidebar-section-title">Menu</div>
+          <nav class="category-list" aria-label="Sidebar page directory">
+            <a class="category-link" href="../"><span>HOME</span></a>
+            <a class="category-link" href="../cv/"><span>CV</span></a>
+            <a class="category-link" href="../about-me/"><span>ABOUT ME</span></a>
+            <a class="category-link" href="../publications/" aria-current="page"><span>PUBLICATIONS</span></a>
+            <div class="category-group">
+              <a class="category-link" href="../hobbies/"><span>HOBBIES</span></a>
+              <div class="category-sublist" aria-label="Hobbies subpages">
+                <a class="category-sublink" href="../hobbies/game-review/">Game Review</a>
+                <a class="category-sublink" href="../hobbies/travel/">Travel</a>
+                <a class="category-sublink" href="../hobbies/kendo/">Kendo</a>
+              </div>
+            </div>
+            <a class="category-link" href="../contact/"><span>CONTACT</span></a>
+          </nav>
+        </div>
+
+        <div class="sidebar-card sidebar-profiles-card">
+          <div class="sidebar-section-title">Profiles</div>
           <div class="social-list">
             <a class="social-link" href="https://scholar.google.com/citations?user=WEnrQOYAAAAJ" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
@@ -134,24 +184,12 @@
             </a>
           </div>
         </div>
-
-        <div class="sidebar-card">
-          <div class="sidebar-section-title">Menu</div>
-          <nav class="category-list" aria-label="Sidebar page directory">
-            <a class="category-link" href="../"><span>HOME</span><span class="category-count">Summary</span></a>
-            <a class="category-link" href="../cv/"><span>CV</span><span class="category-count">Draft</span></a>
-            <a class="category-link" href="../about-me/"><span>ABOUT ME</span><span class="category-count">4</span></a>
-            <a class="category-link" href="../publications/" aria-current="page"><span>PUBLICATIONS</span><span class="category-count">6</span></a>
-            <a class="category-link" href="../hobbys/"><span>HOBBYS</span><span class="category-count">3</span></a>
-            <a class="category-link" href="../contact/"><span>CONTACT</span><span class="category-count">Info</span></a>
-          </nav>
-        </div>
       </aside>
 
       <main id="main-content" class="main-col">
         <section class="card">
-          <div class="eyebrow">Research Output</div>
-          <h1 class="page-title">Publications &amp; Patent</h1>
+          <div class="eyebrow">Publications</div>
+          <h1 class="page-title">Research Output</h1>
           <p class="page-subtitle">* First author / inventor &nbsp;·&nbsp; † Corresponding author</p>
           <div class="subnav-pills">
             <button class="filter-tab" type="button" data-filter="all" aria-pressed="true">All (6)</button>
@@ -335,9 +373,23 @@
   </div>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-motto">&#x1F3C1; I MUST NOT FEAR &#x1F3C1;</div>
-      <div>COPYRIGHT &copy; 2020-2026 Won-Doo Seo, ALL RIGHTS RESERVED.</div>
+    <div class="container">
+      <div class="footer-profiles" aria-label="Profiles">
+        <span class="footer-profiles-title">Profiles</span>
+        <div class="footer-profiles-list">
+        <a class="footer-profile-link" href="https://scholar.google.com/citations?user=WEnrQOYAAAAJ" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg><span>Google Scholar</span></a>
+        <a class="footer-profile-link" href="https://orcid.org/0000-0001-8944-4262" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 11v5"></path><path d="M8 8h.01"></path><path d="M12 16v-5h2a2.5 2.5 0 0 1 0 5h-2z"></path></svg><span>ORCID</span></a>
+        <a class="footer-profile-link" href="https://www.webofscience.com/wos/author/record/OZF-8499-2025" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg><span>Web of Science</span></a>
+        <a class="footer-profile-link" href="https://github.com/WondooSeo" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg><span>GitHub</span></a>
+        <a class="footer-profile-link" href="https://www.linkedin.com/in/wondooseo/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg><span>LinkedIn</span></a>
+        <a class="footer-profile-link" href="https://www.instagram.com/miracleboy_wondoo/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg><span>Instagram</span></a>
+        <a class="footer-profile-link" href="mailto:sentryradar@naver.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg><span>Email</span></a>
+        </div>
+      </div>
+      <div class="footer-inner">
+        <div class="footer-motto">&#x1F601; WITHOUT HASTE, WITHOUT REST</div>
+        <div>COPYRIGHT &copy; 2020-2026 Won-Doo Seo, ALL RIGHTS RESERVED.</div>
+      </div>
     </div>
   </footer>
 
