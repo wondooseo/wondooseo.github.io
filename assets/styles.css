@@ -1319,7 +1319,7 @@ img {
 }
 
 .sub-timeline-row--nested {
-  padding-left: 1.55rem;
+  padding-left: 0.95rem;
 }
 
 .sub-timeline-row--nested::before {
