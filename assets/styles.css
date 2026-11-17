@@ -870,9 +870,6 @@ img {
   margin-bottom: 0.65rem;
 }
 
-.hero-welcome .eyebrow {
-  margin-bottom: 0.45rem;
-}
 
 .page-title {
   font-size: clamp(1.75rem, 3vw, 2.25rem);
