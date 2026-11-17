@@ -69,6 +69,55 @@
     }
   });
 
+  // Desktop dropdown submenu toggle & outside-click/Escape dismissal
+  const desktopSubmenuItems = document.querySelectorAll(".nav-item.has-submenu");
+  desktopSubmenuItems.forEach((item) => {
+    const btn = item.querySelector(".nav-submenu-btn");
+    if (!btn) return;
+
+    function setOpen(open) {
+      item.classList.toggle("is-open", open);
+      if (open) {
+        item.classList.remove("is-dismissed");
+      }
+      btn.setAttribute("aria-expanded", String(open));
+    }
+
+    btn.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const next = !item.classList.contains("is-open");
+      setOpen(next);
+      if (!next) {
+        item.classList.add("is-dismissed");
+      }
+    });
+
+    item.addEventListener("mouseleave", () => {
+      item.classList.remove("is-dismissed");
+    });
+
+    item.addEventListener("focusout", (event) => {
+      if (!item.contains(event.relatedTarget)) {
+        item.classList.remove("is-dismissed");
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!item.contains(event.target)) {
+        setOpen(false);
+        item.classList.remove("is-dismissed");
+      }
+    });
+
+    item.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        item.classList.add("is-dismissed");
+        btn.focus();
+      }
+    });
+  });
+
   // Mobile navigation drawer
   const mobileBtn = document.getElementById("mobile-menu-btn");
   const mobileDrawer = document.getElementById("mobile-drawer");
@@ -78,6 +127,88 @@
       mobileBtn.setAttribute("aria-expanded", String(!expanded));
       mobileDrawer.classList.toggle("is-open", !expanded);
     });
+  }
+
+  // Mobile submenu accordion toggle inside mobile drawer
+  const mobileSubToggles = document.querySelectorAll(".mobile-submenu-toggle");
+  mobileSubToggles.forEach((toggleBtn) => {
+    const targetId = toggleBtn.getAttribute("aria-controls");
+    const targetPanel = targetId ? document.getElementById(targetId) : null;
+    if (!targetPanel) return;
+
+    toggleBtn.addEventListener("click", () => {
+      const expanded = toggleBtn.getAttribute("aria-expanded") === "true";
+      toggleBtn.setAttribute("aria-expanded", String(!expanded));
+      targetPanel.classList.toggle("is-open", !expanded);
+    });
+  });
+
+  // Interactive section tabs (e.g., ABOUT ME) with keyboard navigation & hash sync
+  const sectionTabs = Array.from(document.querySelectorAll('[role="tab"][data-tab]'));
+  const sectionPanels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+
+  if (sectionTabs.length > 0 && sectionPanels.length > 0) {
+    function activateTab(tab, { focus = false, updateHash = false } = {}) {
+      const targetId = tab.dataset.tab;
+
+      sectionTabs.forEach((btn) => {
+        const isSelected = btn === tab;
+        btn.setAttribute("aria-selected", String(isSelected));
+        btn.setAttribute("tabindex", isSelected ? "0" : "-1");
+      });
+
+      sectionPanels.forEach((panel) => {
+        panel.hidden = panel.id !== targetId;
+      });
+
+      if (focus) {
+        tab.focus();
+      }
+
+      if (updateHash && targetId) {
+        try {
+          history.replaceState(null, "", `#${targetId}`);
+        } catch {
+          // Ignore history errors in restricted origins.
+        }
+      }
+    }
+
+    function activateTabByHash() {
+      const hashId = window.location.hash.replace(/^#/, "");
+      if (!hashId) return;
+      const matched = sectionTabs.find((btn) => btn.dataset.tab === hashId);
+      if (matched) {
+        activateTab(matched);
+      }
+    }
+
+    sectionTabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => {
+        activateTab(tab, { updateHash: true });
+      });
+
+      tab.addEventListener("keydown", (event) => {
+        let nextIndex = null;
+        if (event.key === "ArrowRight") {
+          nextIndex = (index + 1) % sectionTabs.length;
+        } else if (event.key === "ArrowLeft") {
+          nextIndex = (index - 1 + sectionTabs.length) % sectionTabs.length;
+        } else if (event.key === "Home") {
+          nextIndex = 0;
+        } else if (event.key === "End") {
+          nextIndex = sectionTabs.length - 1;
+        }
+
+        if (nextIndex !== null) {
+          event.preventDefault();
+          activateTab(sectionTabs[nextIndex], { focus: true, updateHash: true });
+        }
+      });
+    });
+
+    activateTabByHash();
+    window.addEventListener("hashchange", activateTabByHash);
   }
 
   // Publication category filtering
