@@ -9,6 +9,7 @@
   --bg-page: #f6f7f9;
   --bg-surface: #ffffff;
   --bg-subtle: #eff1f5;
+  --bg-illus: #ffffff;
   --bg-hover: #e6e9ef;
   --bg-nav: rgba(255, 255, 255, 0.9);
 
@@ -848,7 +849,7 @@ img {
 
 .hero-welcome {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 184px;
+  grid-template-columns: minmax(0, 1fr) 216px;
   gap: 1.5rem;
   align-items: center;
   padding: 1.35rem 1.75rem;
@@ -907,14 +908,16 @@ img {
   overflow: hidden;
   border: 1px solid var(--border-subtle);
   background-color: var(--bg-subtle);
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
 }
 
 .hero-portrait {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 18%;
+  object-position: 48% 35%;
+  transform: scale(1.32);
+  transform-origin: 48% 34%;
 }
 
 .section-card-head {
@@ -1484,8 +1487,88 @@ img {
 }
 
 .pub-card[hidden],
+.photo-card[hidden],
 .card[hidden] {
   display: none;
+}
+
+.kendo-news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.kendo-news-item + .kendo-news-item {
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.kendo-news-date {
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.kendo-news-desc {
+  margin-top: 0.35rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.94rem;
+  color: var(--text-primary);
+}
+
+.kendo-photo-card {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.kendo-photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kendo-illus-frame {
+  max-width: 540px;
+  margin: 0.85rem 0 1rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-illus);
+}
+
+.kendo-illus-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.kendo-subheading {
+  margin-top: 0.95rem;
+  margin-bottom: 0.45rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.kendo-ol {
+  margin-top: 0.35rem;
+  padding-left: 1.35rem;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.kendo-ol li + li {
+  margin-top: 0.45rem;
+}
+
+.kendo-source {
+  margin-top: 0.7rem;
+  font-size: 0.86rem;
+  color: var(--text-muted);
 }
 
 .pub-top {
@@ -1855,7 +1938,7 @@ img {
 
   .hero-portrait-wrap {
     width: 100%;
-    max-width: 220px;
+    max-width: 240px;
     margin: 0.25rem auto 0;
   }
 }
