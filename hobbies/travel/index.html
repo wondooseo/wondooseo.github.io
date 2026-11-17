@@ -191,11 +191,15 @@
           <div class="eyebrow"><a class="eyebrow-link" href="../">Hobbies</a></div>
           <h1 class="page-title">Travel</h1>
           <p class="page-subtitle">Travel photography and trip logs</p>
-          <div class="subnav-pills" aria-label="Other Hobbies pages">
-            <a class="subnav-pill" href="../game-review/">Game Review</a>
-            <a class="subnav-pill" href="./" aria-current="page">Travel</a>
-            <a class="subnav-pill" href="../kendo/">Kendo</a>
+          <div class="subnav-pills" aria-label="Filter trips by destination">
+            <button class="filter-tab" type="button" data-travel-filter="all" aria-pressed="true">All (5)</button>
+            <button class="filter-tab" type="button" data-travel-filter="2024-hokkaido" aria-pressed="false">&#x1F1EF;&#x1F1F5; 2024 Hokkaido</button>
+            <button class="filter-tab" type="button" data-travel-filter="2023-tokyo" aria-pressed="false">&#x1F1EF;&#x1F1F5; 2023 Tokyo</button>
+            <button class="filter-tab" type="button" data-travel-filter="2018-tokyo" aria-pressed="false">&#x1F1EF;&#x1F1F5; 2018 Tokyo</button>
+            <button class="filter-tab" type="button" data-travel-filter="2017-nz-au" aria-pressed="false">&#x1F1F3;&#x1F1FF;&#x1F1E6;&#x1F1FA; 2017 NZ &amp; AU</button>
+            <button class="filter-tab" type="button" data-travel-filter="2016-railro" aria-pressed="false">&#x1F1F0;&#x1F1F7; 2016 Rail-Ro</button>
           </div>
+          <span id="travel-filter-status" class="sr-only" aria-live="polite">Showing 5 trips</span>
         </section>
 
         <section class="card">
@@ -204,7 +208,7 @@
           </div>
 
           <div class="photo-grid">
-            <figure class="photo-card">
+            <figure class="photo-card" data-trip="2024-hokkaido">
               <div class="photo-frame">
                 <img src="../../assets/images/travel-hokkaido.jpg" alt="Goryokaku Star Fort in Hakodate, Hokkaido" loading="lazy">
               </div>
@@ -214,7 +218,7 @@
               </figcaption>
             </figure>
 
-            <figure class="photo-card">
+            <figure class="photo-card" data-trip="2023-tokyo">
               <div class="photo-frame">
                 <img src="../../assets/images/travel-tokyo23.jpg" alt="Ochanomizu river bridge and subway train in Tokyo" loading="lazy">
               </div>
@@ -224,17 +228,17 @@
               </figcaption>
             </figure>
 
-            <figure class="photo-card">
+            <figure class="photo-card" data-trip="2018-tokyo">
               <div class="photo-frame">
-                <img src="../../assets/images/travel-tokyo18.jpg" alt="Tokyo street view" loading="lazy">
+                <img src="../../assets/images/travel-tokyo18.jpg" alt="Shinjuku Station in Tokyo" loading="lazy">
               </div>
               <figcaption class="photo-caption">
                 <div class="photo-title">Tokyo, Japan</div>
-                <div class="photo-meta">2018.08.16 - 2018.08.22</div>
+                <div class="photo-meta">2018.08.16 - 2018.08.22 · Shinjuku Station</div>
               </figcaption>
             </figure>
 
-            <figure class="photo-card">
+            <figure class="photo-card" data-trip="2017-nz-au">
               <div class="photo-frame">
                 <img src="../../assets/images/travel-anz.jpg" alt="Sydney Harbour Bridge at night" loading="lazy">
               </div>
@@ -244,7 +248,7 @@
               </figcaption>
             </figure>
 
-            <figure class="photo-card">
+            <figure class="photo-card" data-trip="2016-railro">
               <div class="photo-frame">
                 <img src="../../assets/images/travel-railro.jpg" alt="Yeosu Expo Station during Rail-Ro trip" loading="lazy">
               </div>
