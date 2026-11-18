@@ -120,7 +120,7 @@
       <aside class="sidebar" aria-label="Profile and site links">
         <div class="sidebar-card sidebar-profile-card">
           <div class="sidebar-profile">
-            <img class="sidebar-avatar" src="../assets/images/profile.jpg" alt="Won-Doo Seo" width="52" height="52">
+            <img class="sidebar-avatar" src="../assets/images/image-sidebar-profile.webp" alt="Won-Doo Seo" width="52" height="52">
             <div>
               <div class="sidebar-name">Won-Doo Seo</div>
               <div class="sidebar-handle">AI Researcher</div>
@@ -140,8 +140,13 @@
             <a class="category-link" href="../about-me/"><span>ABOUT ME</span></a>
             <a class="category-link" href="../publications/"><span>PUBLICATIONS</span></a>
             <div class="category-group">
-              <a class="category-link" href="../hobbies/"><span>HOBBIES</span></a>
-              <div class="category-sublist" aria-label="Hobbies subpages">
+              <div class="category-row">
+                <a class="category-link" href="../hobbies/"><span>HOBBIES</span></a>
+                <button class="category-submenu-toggle" type="button" aria-expanded="false" aria-controls="sidebar-hobbies-submenu" aria-label="Toggle Hobbies submenu">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+                </button>
+              </div>
+              <div id="sidebar-hobbies-submenu" class="category-sublist" aria-label="Hobbies subpages">
                 <a class="category-sublink" href="../hobbies/game-review/">Game Review</a>
                 <a class="category-sublink" href="../hobbies/travel/">Travel</a>
                 <a class="category-sublink" href="../hobbies/kendo/">Kendo</a>
@@ -188,9 +193,12 @@
 
       <main id="main-content" class="main-col">
         <section class="card">
-          <div class="section-card-head">
-            <h1 class="page-title" style="font-size: 1.75rem;">Curriculum Vitae</h1>
-          </div>
+          <div class="eyebrow">CV</div>
+          <h1 class="page-title">Curriculum Vitae</h1>
+          <p class="page-subtitle">Updated only when needed, mostly when deadlines start knocking</p>
+        </section>
+
+        <section class="card">
           <div class="cv-embed-wrap">
             <iframe
               class="cv-embed-frame"

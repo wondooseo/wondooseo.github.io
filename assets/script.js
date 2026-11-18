@@ -118,20 +118,31 @@
     });
   });
 
-  // Mobile navigation drawer
+  // Mobile navigation drawer (auto-closes when expanding past mobile breakpoint)
   const mobileBtn = document.getElementById("mobile-menu-btn");
   const mobileDrawer = document.getElementById("mobile-drawer");
   if (mobileBtn && mobileDrawer) {
+    function setMobileDrawerOpen(open) {
+      mobileBtn.setAttribute("aria-expanded", String(open));
+      mobileDrawer.classList.toggle("is-open", open);
+    }
+
     mobileBtn.addEventListener("click", () => {
       const expanded = mobileBtn.getAttribute("aria-expanded") === "true";
-      mobileBtn.setAttribute("aria-expanded", String(!expanded));
-      mobileDrawer.classList.toggle("is-open", !expanded);
+      setMobileDrawerOpen(!expanded);
+    });
+
+    const mobileBreakpoint = window.matchMedia("(max-width: 860px)");
+    mobileBreakpoint.addEventListener("change", (event) => {
+      if (!event.matches) {
+        setMobileDrawerOpen(false);
+      }
     });
   }
 
-  // Mobile submenu accordion toggle inside mobile drawer
-  const mobileSubToggles = document.querySelectorAll(".mobile-submenu-toggle");
-  mobileSubToggles.forEach((toggleBtn) => {
+  // Shared submenu accordion toggles (mobile drawer & desktop sidebar)
+  const submenuToggles = document.querySelectorAll(".mobile-submenu-toggle, .category-submenu-toggle");
+  submenuToggles.forEach((toggleBtn) => {
     const targetId = toggleBtn.getAttribute("aria-controls");
     const targetPanel = targetId ? document.getElementById(targetId) : null;
     if (!targetPanel) return;
@@ -211,51 +222,29 @@
     window.addEventListener("hashchange", activateTabByHash);
   }
 
-  // Shared category/trip filtering for Publications and Travel
-  function initFilterGroup({ buttonSelector, itemSelector, filterAttr, itemAttr, statusId, unitSingular, unitPlural }) {
-    const buttons = document.querySelectorAll(buttonSelector);
-    const items = document.querySelectorAll(itemSelector);
-    const statusEl = statusId ? document.getElementById(statusId) : null;
+  // Category filtering for Publications
+  const filterButtons = document.querySelectorAll(".filter-tab[data-filter]");
+  const pubCards = document.querySelectorAll(".pub-card[data-category]");
+  const pubStatus = document.getElementById("pub-filter-status");
 
-    buttons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const filter = button.dataset[filterAttr];
-        let visibleCount = 0;
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+      let visibleCount = 0;
 
-        buttons.forEach((btn) => {
-          btn.setAttribute("aria-pressed", String(btn === button));
-        });
-
-        items.forEach((item) => {
-          const match = filter === "all" || item.dataset[itemAttr] === filter;
-          item.hidden = !match;
-          if (match) visibleCount += 1;
-        });
-
-        if (statusEl) {
-          statusEl.textContent = `Showing ${visibleCount} ${visibleCount === 1 ? unitSingular : unitPlural}`;
-        }
+      filterButtons.forEach((btn) => {
+        btn.setAttribute("aria-pressed", String(btn === button));
       });
+
+      pubCards.forEach((item) => {
+        const match = filter === "all" || item.dataset.category === filter;
+        item.hidden = !match;
+        if (match) visibleCount += 1;
+      });
+
+      if (pubStatus) {
+        pubStatus.textContent = `Showing ${visibleCount} ${visibleCount === 1 ? "item" : "items"}`;
+      }
     });
-  }
-
-  initFilterGroup({
-    buttonSelector: ".filter-tab[data-filter]",
-    itemSelector: ".pub-card[data-category]",
-    filterAttr: "filter",
-    itemAttr: "category",
-    statusId: "pub-filter-status",
-    unitSingular: "item",
-    unitPlural: "items"
-  });
-
-  initFilterGroup({
-    buttonSelector: ".filter-tab[data-travel-filter]",
-    itemSelector: ".photo-card[data-trip]",
-    filterAttr: "travelFilter",
-    itemAttr: "trip",
-    statusId: "travel-filter-status",
-    unitSingular: "trip",
-    unitPlural: "trips"
   });
 })();

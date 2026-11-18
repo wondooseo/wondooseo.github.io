@@ -120,7 +120,7 @@
       <aside class="sidebar" aria-label="Profile and site links">
         <div class="sidebar-card sidebar-profile-card">
           <div class="sidebar-profile">
-            <img class="sidebar-avatar" src="../assets/images/profile.jpg" alt="Won-Doo Seo" width="52" height="52">
+            <img class="sidebar-avatar" src="../assets/images/image-sidebar-profile.webp" alt="Won-Doo Seo" width="52" height="52">
             <div>
               <div class="sidebar-name">Won-Doo Seo</div>
               <div class="sidebar-handle">AI Researcher</div>
@@ -140,8 +140,13 @@
             <a class="category-link" href="../about-me/"><span>ABOUT ME</span></a>
             <a class="category-link" href="../publications/"><span>PUBLICATIONS</span></a>
             <div class="category-group">
-              <a class="category-link" href="../hobbies/" aria-current="page"><span>HOBBIES</span></a>
-              <div class="category-sublist" aria-label="Hobbies subpages">
+              <div class="category-row">
+                <a class="category-link" href="../hobbies/" aria-current="page"><span>HOBBIES</span></a>
+                <button class="category-submenu-toggle" type="button" aria-expanded="true" aria-controls="sidebar-hobbies-submenu" aria-label="Toggle Hobbies submenu">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+                </button>
+              </div>
+              <div id="sidebar-hobbies-submenu" class="category-sublist is-open" aria-label="Hobbies subpages">
                 <a class="category-sublink" href="../hobbies/game-review/">Game Review</a>
                 <a class="category-sublink" href="../hobbies/travel/">Travel</a>
                 <a class="category-sublink" href="../hobbies/kendo/">Kendo</a>
@@ -198,16 +203,16 @@
             <h2 class="section-heading">Explore Topics</h2>
           </div>
           <div class="entry-stack">
-            <a class="post-link-card" href="./game-review/">
-              <span class="post-link-kicker">01 · Game Review</span>
+            <a class="post-link-card post-link-card--topic" href="./game-review/">
+              <span class="post-link-kicker post-link-kicker--topic">01 · Game Review</span>
               <span class="post-link-title">Just an Amateur Gamer</span>
             </a>
-            <a class="post-link-card" href="./travel/">
-              <span class="post-link-kicker">02 · Travel</span>
+            <a class="post-link-card post-link-card--topic" href="./travel/">
+              <span class="post-link-kicker post-link-kicker--topic">02 · Travel</span>
               <span class="post-link-title">Travel Photography &amp; Trip Logs</span>
             </a>
-            <a class="post-link-card" href="./kendo/">
-              <span class="post-link-kicker">03 · Kendo (劍道)</span>
+            <a class="post-link-card post-link-card--topic" href="./kendo/">
+              <span class="post-link-kicker post-link-kicker--topic">03 · Kendo (劍道)</span>
               <span class="post-link-title">Way of the Sword</span>
             </a>
           </div>

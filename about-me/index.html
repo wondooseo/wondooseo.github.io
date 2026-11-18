@@ -120,7 +120,7 @@
       <aside class="sidebar" aria-label="Profile and site links">
         <div class="sidebar-card sidebar-profile-card">
           <div class="sidebar-profile">
-            <img class="sidebar-avatar" src="../assets/images/profile.jpg" alt="Won-Doo Seo" width="52" height="52">
+            <img class="sidebar-avatar" src="../assets/images/image-sidebar-profile.webp" alt="Won-Doo Seo" width="52" height="52">
             <div>
               <div class="sidebar-name">Won-Doo Seo</div>
               <div class="sidebar-handle">AI Researcher</div>
@@ -140,8 +140,13 @@
             <a class="category-link" href="../about-me/" aria-current="page"><span>ABOUT ME</span></a>
             <a class="category-link" href="../publications/"><span>PUBLICATIONS</span></a>
             <div class="category-group">
-              <a class="category-link" href="../hobbies/"><span>HOBBIES</span></a>
-              <div class="category-sublist" aria-label="Hobbies subpages">
+              <div class="category-row">
+                <a class="category-link" href="../hobbies/"><span>HOBBIES</span></a>
+                <button class="category-submenu-toggle" type="button" aria-expanded="false" aria-controls="sidebar-hobbies-submenu" aria-label="Toggle Hobbies submenu">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+                </button>
+              </div>
+              <div id="sidebar-hobbies-submenu" class="category-sublist" aria-label="Hobbies subpages">
                 <a class="category-sublink" href="../hobbies/game-review/">Game Review</a>
                 <a class="category-sublink" href="../hobbies/travel/">Travel</a>
                 <a class="category-sublink" href="../hobbies/kendo/">Kendo</a>
@@ -189,8 +194,8 @@
       <main id="main-content" class="main-col">
         <section class="card">
           <div class="eyebrow">About Me</div>
-          <h1 class="page-title">Journey &amp; Milestones</h1>
-          <p class="page-subtitle">Academic training, research career, honors, and technical stack</p>
+          <h1 class="page-title">Milestones</h1>
+          <p class="page-subtitle">The path I have walked so far</p>
           <div class="subnav-pills" role="tablist" aria-label="About Me sections">
             <button id="tab-biography" class="filter-tab" type="button" role="tab" aria-selected="true" aria-controls="biography" data-tab="biography" tabindex="0">Biography</button>
             <button id="tab-career" class="filter-tab" type="button" role="tab" aria-selected="false" aria-controls="career" data-tab="career" tabindex="-1">Career</button>
@@ -629,6 +634,7 @@
                 <div>
                   <div class="interest-sublabel">Methodologies</div>
                   <div class="tag-list">
+                    <span class="tag tag--neutral">Machine Learning</span>
                     <span class="tag tag--neutral">Deep Learning</span>
                     <span class="tag tag--neutral">Time-Series Modeling</span>
                     <span class="tag tag--neutral">Multimodal Learning</span>

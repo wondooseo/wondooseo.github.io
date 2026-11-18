@@ -120,7 +120,7 @@
       <aside class="sidebar" aria-label="Profile and site links">
         <div class="sidebar-card sidebar-profile-card">
           <div class="sidebar-profile">
-            <img class="sidebar-avatar" src="../../assets/images/profile.jpg" alt="Won-Doo Seo" width="52" height="52">
+            <img class="sidebar-avatar" src="../../assets/images/image-sidebar-profile.webp" alt="Won-Doo Seo" width="52" height="52">
             <div>
               <div class="sidebar-name">Won-Doo Seo</div>
               <div class="sidebar-handle">AI Researcher</div>
@@ -140,8 +140,13 @@
             <a class="category-link" href="../../about-me/"><span>ABOUT ME</span></a>
             <a class="category-link" href="../../publications/"><span>PUBLICATIONS</span></a>
             <div class="category-group">
-              <a class="category-link is-parent-active" href="../../hobbies/"><span>HOBBIES</span></a>
-              <div class="category-sublist" aria-label="Hobbies subpages">
+              <div class="category-row">
+                <a class="category-link is-parent-active" href="../../hobbies/"><span>HOBBIES</span></a>
+                <button class="category-submenu-toggle" type="button" aria-expanded="true" aria-controls="sidebar-hobbies-submenu" aria-label="Toggle Hobbies submenu">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+                </button>
+              </div>
+              <div id="sidebar-hobbies-submenu" class="category-sublist is-open" aria-label="Hobbies subpages">
                 <a class="category-sublink" href="../../hobbies/game-review/">Game Review</a>
                 <a class="category-sublink" href="../../hobbies/travel/" aria-current="page">Travel</a>
                 <a class="category-sublink" href="../../hobbies/kendo/">Kendo</a>
@@ -190,16 +195,7 @@
         <section class="card">
           <div class="eyebrow"><a class="eyebrow-link" href="../">Hobbies</a></div>
           <h1 class="page-title">Travel</h1>
-          <p class="page-subtitle">Travel photography and trip logs</p>
-          <div class="subnav-pills" aria-label="Filter trips by destination">
-            <button class="filter-tab" type="button" data-travel-filter="all" aria-pressed="true">All (5)</button>
-            <button class="filter-tab" type="button" data-travel-filter="2024-hokkaido" aria-pressed="false">2024 Hokkaido</button>
-            <button class="filter-tab" type="button" data-travel-filter="2023-tokyo" aria-pressed="false">2023 Tokyo</button>
-            <button class="filter-tab" type="button" data-travel-filter="2018-tokyo" aria-pressed="false">2018 Tokyo</button>
-            <button class="filter-tab" type="button" data-travel-filter="2017-nz-au" aria-pressed="false">2017 NZ &amp; AU</button>
-            <button class="filter-tab" type="button" data-travel-filter="2016-railro" aria-pressed="false">2016 Rail-Ro</button>
-          </div>
-          <span id="travel-filter-status" class="sr-only" aria-live="polite">Showing 5 trips</span>
+          <p class="page-subtitle">Wondering where to travel next</p>
         </section>
 
         <section class="card">
@@ -208,58 +204,62 @@
           </div>
 
           <div class="photo-grid">
-            <figure class="photo-card" data-trip="2024-hokkaido">
+            <a class="photo-card post-card" href="./2024-hokkaido/">
               <div class="photo-frame">
-                <img src="../../assets/images/travel-hokkaido.jpg" alt="Goryokaku Star Fort in Hakodate, Hokkaido" loading="lazy">
+                <img src="../../assets/images/travel-hokkaido.webp" alt="Goryokaku Star Fort in Hakodate, Hokkaido" loading="lazy">
               </div>
-              <figcaption class="photo-caption">
-                <div class="photo-title">Hokkaido, Japan</div>
-                <div class="photo-meta">2024.09.18 - 2024.09.21 · Goryokaku, Hakodate</div>
-              </figcaption>
-            </figure>
+              <div class="photo-caption">
+                <div class="photo-title">Hokkaido, Japan (2024)</div>
+                <div class="photo-meta">2024.09.18 - 2024.09.21</div>
+                <div class="post-card-cta">Read post &rarr;</div>
+              </div>
+            </a>
 
-            <figure class="photo-card" data-trip="2023-tokyo">
+            <a class="photo-card post-card" href="./2023-tokyo/">
               <div class="photo-frame">
-                <img src="../../assets/images/travel-tokyo23.jpg" alt="Ochanomizu river bridge and subway train in Tokyo" loading="lazy">
+                <img src="../../assets/images/travel-tokyo23.webp" alt="Ochanomizu river bridge and subway train in Tokyo" loading="lazy">
               </div>
-              <figcaption class="photo-caption">
-                <div class="photo-title">Tokyo, Japan</div>
-                <div class="photo-meta">2023.09.27 - 2023.10.01 · Ochanomizu</div>
-              </figcaption>
-            </figure>
+              <div class="photo-caption">
+                <div class="photo-title">Tokyo, Japan (2023)</div>
+                <div class="photo-meta">2023.09.27 - 2023.10.01</div>
+                <div class="post-card-cta">Read post &rarr;</div>
+              </div>
+            </a>
 
-            <figure class="photo-card" data-trip="2018-tokyo">
+            <a class="photo-card post-card" href="./2018-tokyo/">
               <div class="photo-frame">
-                <img src="../../assets/images/travel-tokyo18.jpg" alt="Shinjuku Station in Tokyo" loading="lazy">
+                <img src="../../assets/images/travel-tokyo18.webp" alt="Shinjuku Station in Tokyo" loading="lazy">
               </div>
-              <figcaption class="photo-caption">
-                <div class="photo-title">Tokyo, Japan</div>
-                <div class="photo-meta">2018.08.16 - 2018.08.22 · Shinjuku Station</div>
-              </figcaption>
-            </figure>
+              <div class="photo-caption">
+                <div class="photo-title">Tokyo, Japan (2018)</div>
+                <div class="photo-meta">2018.08.16 - 2018.08.22</div>
+                <div class="post-card-cta">Read post &rarr;</div>
+              </div>
+            </a>
 
-            <figure class="photo-card" data-trip="2017-nz-au">
+            <a class="photo-card post-card" href="./2017-nz-au/">
               <div class="photo-frame">
-                <img src="../../assets/images/travel-anz.jpg" alt="Sydney Harbour Bridge at night" loading="lazy">
+                <img src="../../assets/images/travel-anz.webp" alt="Sydney Harbour Bridge at night" loading="lazy">
               </div>
-              <figcaption class="photo-caption">
-                <div class="photo-title">New Zealand &amp; Australia</div>
-                <div class="photo-meta">2017.02.04 - 2017.02.13 · Sydney Harbour Bridge</div>
-              </figcaption>
-            </figure>
+              <div class="photo-caption">
+                <div class="photo-title">New Zealand &amp; Australia (2017)</div>
+                <div class="photo-meta">2017.02.04 - 2017.02.13</div>
+                <div class="post-card-cta">Read post &rarr;</div>
+              </div>
+            </a>
 
-            <figure class="photo-card" data-trip="2016-railro">
+            <a class="photo-card post-card" href="./2016-railro/">
               <div class="photo-frame">
-                <img src="../../assets/images/travel-railro.jpg" alt="Yeosu Expo Station during Rail-Ro trip" loading="lazy">
+                <img src="../../assets/images/travel-railro/10.webp" alt="Coastal view from Ttangkkeut in Haenam-gun" loading="lazy">
               </div>
-              <figcaption class="photo-caption">
-                <div class="photo-title">Rail-Ro Trip</div>
-                <div class="photo-meta">2016.08.06 - 2016.08.10 · Yeosu Expo Station</div>
-              </figcaption>
-            </figure>
+              <div class="photo-caption">
+                <div class="photo-title">Rail-Ro Trip (2016)</div>
+                <div class="photo-meta">2016.08.06 - 2016.08.10</div>
+                <div class="post-card-cta">Read post &rarr;</div>
+              </div>
+            </a>
           </div>
         </section>
-
       </main>
     </div>
   </div>
