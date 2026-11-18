@@ -222,51 +222,29 @@
     window.addEventListener("hashchange", activateTabByHash);
   }
 
-  // Shared category/trip filtering for Publications and Travel
-  function initFilterGroup({ buttonSelector, itemSelector, filterAttr, itemAttr, statusId, unitSingular, unitPlural }) {
-    const buttons = document.querySelectorAll(buttonSelector);
-    const items = document.querySelectorAll(itemSelector);
-    const statusEl = statusId ? document.getElementById(statusId) : null;
+  // Category filtering for Publications
+  const filterButtons = document.querySelectorAll(".filter-tab[data-filter]");
+  const pubCards = document.querySelectorAll(".pub-card[data-category]");
+  const pubStatus = document.getElementById("pub-filter-status");
 
-    buttons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const filter = button.dataset[filterAttr];
-        let visibleCount = 0;
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+      let visibleCount = 0;
 
-        buttons.forEach((btn) => {
-          btn.setAttribute("aria-pressed", String(btn === button));
-        });
-
-        items.forEach((item) => {
-          const match = filter === "all" || item.dataset[itemAttr] === filter;
-          item.hidden = !match;
-          if (match) visibleCount += 1;
-        });
-
-        if (statusEl) {
-          statusEl.textContent = `Showing ${visibleCount} ${visibleCount === 1 ? unitSingular : unitPlural}`;
-        }
+      filterButtons.forEach((btn) => {
+        btn.setAttribute("aria-pressed", String(btn === button));
       });
+
+      pubCards.forEach((item) => {
+        const match = filter === "all" || item.dataset.category === filter;
+        item.hidden = !match;
+        if (match) visibleCount += 1;
+      });
+
+      if (pubStatus) {
+        pubStatus.textContent = `Showing ${visibleCount} ${visibleCount === 1 ? "item" : "items"}`;
+      }
     });
-  }
-
-  initFilterGroup({
-    buttonSelector: ".filter-tab[data-filter]",
-    itemSelector: ".pub-card[data-category]",
-    filterAttr: "filter",
-    itemAttr: "category",
-    statusId: "pub-filter-status",
-    unitSingular: "item",
-    unitPlural: "items"
-  });
-
-  initFilterGroup({
-    buttonSelector: ".filter-tab[data-travel-filter]",
-    itemSelector: ".photo-card[data-trip]",
-    filterAttr: "travelFilter",
-    itemAttr: "trip",
-    statusId: "travel-filter-status",
-    unitSingular: "trip",
-    unitPlural: "trips"
   });
 })();
