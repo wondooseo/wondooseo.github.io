@@ -1054,6 +1054,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.25s ease;
 }
 
 .photo-caption {
@@ -1125,6 +1126,163 @@ img {
   font-size: 0.88rem;
   font-weight: 400;
   color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   Reusable Post Cards & Article Detail Layout
+   ========================================================================== */
+
+.post-card {
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+}
+
+.post-card:hover {
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.post-card:hover .photo-frame img {
+  transform: scale(1.02);
+}
+
+.post-card .photo-caption {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.post-card-cta {
+  margin-top: auto;
+  padding-top: 0.6rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.article-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.75rem;
+  margin-top: 0.85rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.article-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.article-figure {
+  margin: 0;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--bg-subtle);
+}
+
+.article-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.article-figure figcaption {
+  padding: 0.75rem 1rem;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.article-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.article-section-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 0.35rem;
+}
+
+.article-prose {
+  font-size: 0.96rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  max-width: 68ch;
+}
+
+.article-pager {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.article-pager-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  min-width: 0;
+}
+
+.article-pager-link:hover {
+  border-color: var(--accent-border);
+  background-color: var(--accent-soft);
+  text-decoration: none;
+}
+
+.article-pager-link--next {
+  grid-column: 2;
+  text-align: right;
+  align-items: flex-end;
+}
+
+.article-pager-dir {
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+.article-pager-title {
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.article-back-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.article-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.article-back-link:hover {
+  color: var(--accent);
 }
 
 /* ==========================================================================
@@ -1923,8 +2081,15 @@ img {
 
   .two-col-grid,
   .photo-grid,
-  .tier-row {
+  .tier-row,
+  .article-pager {
     grid-template-columns: 1fr;
+  }
+
+  .article-pager-link--next {
+    grid-column: auto;
+    text-align: left;
+    align-items: flex-start;
   }
 
 
@@ -1987,5 +2152,15 @@ img {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .post-card,
+  .photo-frame img {
+    transition: none;
+  }
+
+  .post-card:hover,
+  .post-card:hover .photo-frame img {
+    transform: none;
   }
 }
