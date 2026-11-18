@@ -118,20 +118,31 @@
     });
   });
 
-  // Mobile navigation drawer
+  // Mobile navigation drawer (auto-closes when expanding past mobile breakpoint)
   const mobileBtn = document.getElementById("mobile-menu-btn");
   const mobileDrawer = document.getElementById("mobile-drawer");
   if (mobileBtn && mobileDrawer) {
+    function setMobileDrawerOpen(open) {
+      mobileBtn.setAttribute("aria-expanded", String(open));
+      mobileDrawer.classList.toggle("is-open", open);
+    }
+
     mobileBtn.addEventListener("click", () => {
       const expanded = mobileBtn.getAttribute("aria-expanded") === "true";
-      mobileBtn.setAttribute("aria-expanded", String(!expanded));
-      mobileDrawer.classList.toggle("is-open", !expanded);
+      setMobileDrawerOpen(!expanded);
+    });
+
+    const mobileBreakpoint = window.matchMedia("(max-width: 860px)");
+    mobileBreakpoint.addEventListener("change", (event) => {
+      if (!event.matches) {
+        setMobileDrawerOpen(false);
+      }
     });
   }
 
-  // Mobile submenu accordion toggle inside mobile drawer
-  const mobileSubToggles = document.querySelectorAll(".mobile-submenu-toggle");
-  mobileSubToggles.forEach((toggleBtn) => {
+  // Shared submenu accordion toggles (mobile drawer & desktop sidebar)
+  const submenuToggles = document.querySelectorAll(".mobile-submenu-toggle, .category-submenu-toggle");
+  submenuToggles.forEach((toggleBtn) => {
     const targetId = toggleBtn.getAttribute("aria-controls");
     const targetPanel = targetId ? document.getElementById(targetId) : null;
     if (!targetPanel) return;
