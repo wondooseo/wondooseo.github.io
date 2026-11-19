@@ -1202,6 +1202,10 @@ img {
   font-variant-numeric: tabular-nums;
 }
 
+.page-subtitle + .article-meta-row {
+  margin-top: 0.45rem;
+}
+
 .article-card {
   display: flex;
   flex-direction: column;
