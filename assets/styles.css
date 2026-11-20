@@ -975,10 +975,14 @@ img {
 
 .entry-head {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   gap: 0.35rem 1rem;
+}
+
+.entry-head > :first-child {
+  flex: 1 1 0%;
+  min-width: 0;
 }
 
 .entry-title {
@@ -1429,8 +1433,10 @@ img {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  text-align: right;
   gap: 0.12rem;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 .sub-timeline-row--nested {
@@ -1468,10 +1474,6 @@ img {
   font-size: 0.75rem;
   font-weight: 600;
   vertical-align: middle;
-}
-
-.thesis-link {
-  font-weight: 500;
 }
 
 .metric-row {
@@ -2022,6 +2024,13 @@ img {
     display: flex;
   }
 
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.35rem;
+  }
+
   .hero-welcome {
     grid-template-columns: 1fr;
   }
@@ -2113,22 +2122,23 @@ img {
     gap: 0.3rem;
   }
 
+  .entry-head > :first-child {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
   .entry-period {
     white-space: normal;
   }
 
   .timeline-period-col {
     align-items: flex-start;
+    text-align: left;
+    margin-left: 0;
   }
 
   .cv-embed-frame {
     height: 520px;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.35rem;
   }
 }
 
