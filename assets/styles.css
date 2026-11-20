@@ -975,14 +975,13 @@ img {
 
 .entry-head {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   gap: 0.35rem 1rem;
 }
 
 .entry-head > :first-child {
-  flex: 1 1 180px;
+  flex: 1 1 0%;
   min-width: 0;
 }
 
@@ -1434,6 +1433,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  text-align: right;
   gap: 0.12rem;
   flex-shrink: 0;
   margin-left: auto;
@@ -2130,6 +2130,7 @@ img {
 
   .timeline-period-col {
     align-items: flex-start;
+    text-align: left;
     margin-left: 0;
   }
 
