@@ -981,6 +981,11 @@ img {
   gap: 0.35rem 1rem;
 }
 
+.entry-head > :first-child {
+  flex: 1 1 180px;
+  min-width: 0;
+}
+
 .entry-title {
   font-size: 1.02rem;
   font-weight: 600;
@@ -1431,6 +1436,7 @@ img {
   align-items: flex-end;
   gap: 0.12rem;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 .sub-timeline-row--nested {
@@ -2113,12 +2119,18 @@ img {
     gap: 0.3rem;
   }
 
+  .entry-head > :first-child {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
   .entry-period {
     white-space: normal;
   }
 
   .timeline-period-col {
     align-items: flex-start;
+    margin-left: 0;
   }
 
   .cv-embed-frame {
@@ -2127,7 +2139,8 @@ img {
 
   .footer-inner {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: 0.35rem;
   }
 }
